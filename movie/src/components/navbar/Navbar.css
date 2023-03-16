@@ -1,0 +1,49 @@
+.navbar {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-nav,
+.right-nav {
+  display: flex;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  cursor: pointer;
+}
+.li-eachNav {
+  color: rgb(27, 24, 24);
+}
+
+.li-nav {
+  color: white;
+  margin: 15px;
+  font-weight: bold;
+}
+
+.list-li {
+  border-radius: 10px;
+  border: 1px solid rgb(205, 201, 201);
+}
+
+.logo-container {
+  display: flex;
+}
+
+.logo {
+  display: blox;
+  margin: 15px 15px 15px 0px;
+  font-weight: bolder;
+}
+.logo-color {
+  background-color: rgb(36, 89, 77);
+  width: 50px;
+  border-radius: 10px;
+  margin: 15px 15px 15px 0;
+}

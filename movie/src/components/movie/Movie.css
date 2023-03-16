@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.movie {
+  width: 100%;
+}
+
+.all-content {
+  width: 70%;
+  margin: auto;
+}
+
+.nav-hight {
+  background-color: rgb(3, 25, 96);
+  height: 8vh;
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-weight: bolder;
+}
