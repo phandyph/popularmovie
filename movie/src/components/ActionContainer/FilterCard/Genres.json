@@ -1,0 +1,20 @@
+[
+    {"id": 1, "label":"Action"},
+    {"id": 2, "label":"Adventure"},
+    {"id": 3, "label":"Animation"},
+    {"id": 4, "label":"Comedy"},
+    {"id": 5, "label":"Crime"},
+    {"id": 6, "label":"Documentary"},
+    {"id": 7, "label":"Family"},
+    {"id": 8, "label":"Fantasy"},
+    {"id": 9, "label":"History"},
+    {"id": 10, "label":"Horror"},
+    {"id": 11, "label":"Music"},
+    {"id": 12, "label":"Mystery"},
+    {"id": 13, "label":"Romance"},
+    {"id": 14, "label":"Science Fiction"},
+    {"id": 15, "label":"TV Movie"},
+    {"id": 16, "label":"Thriller"},
+    {"id": 17, "label":"War"},
+    {"id": 18, "label":"Western"}
+  ]
