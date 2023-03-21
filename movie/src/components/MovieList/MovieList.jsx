@@ -1,7 +1,7 @@
 import "./MovieList.css";
 import Navbar from "../Navbar/Navbar";
 import MainContainer from "../MainContainer/MainContainer";
-import movies from './movies.json';
+import movies from "../Json/movies.json";
 
 const MovieList = () => {
   return (
@@ -11,13 +11,10 @@ const MovieList = () => {
       </div>
       <div className="all-content">
         <h3 className="title">Popular Movie</h3>
-        <MainContainer 
-          movies={movies} 
-        />
+        <MainContainer movies={movies} />
       </div>
     </div>
   );
 };
 
 export default MovieList;
-

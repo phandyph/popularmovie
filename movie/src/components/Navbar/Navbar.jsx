@@ -1,6 +1,5 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import { FaSearch, FaPlus} from "react-icons/fa";
-
+import { FaSearch, FaPlus } from "react-icons/fa";
 
 import "./Navbar.css";
 
@@ -29,7 +28,7 @@ const Navbar = () => {
   const other = [
     { id: 1, label: <FaPlus /> },
     { id: 2, label: "EN" },
-    { id: 3, label: "Join TMDB" },
+    { id: 3, label: "JoinTMDB" },
     { id: 4, label: <FaSearch /> },
   ];
 
@@ -59,7 +58,7 @@ const Navbar = () => {
           </li>
 
           <li className="w3-dropdown-hover w3-mobile li-nav">
-            <span>TV Shows</span>
+            <span>TVShows</span>
             <ul className="w3-dropdown-content list-li w3-bar-block w3-dark-white">
               {tvShow.map((tv, i) => {
                 return (
@@ -78,7 +77,7 @@ const Navbar = () => {
             <span>People</span>
             <ul className="w3-dropdown-content list-li w3-bar-block w3-dark-white">
               <li className="li-each-nav w3-bar-item w3-button w3-mobile">
-                Popular People
+                PopularPeople
               </li>
             </ul>
           </li>
@@ -101,7 +100,11 @@ const Navbar = () => {
 
         <ul className="right-nav">
           {other.map((_other, i) => {
-            return <li key={_other.id} className="li-nav">{_other.label}</li>;
+            return (
+              <li key={_other.id} className="li-nav">
+                {_other.label}
+              </li>
+            );
           })}
         </ul>
       </div>

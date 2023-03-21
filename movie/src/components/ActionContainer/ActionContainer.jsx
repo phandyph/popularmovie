@@ -1,14 +1,12 @@
 import "./ActionContainer.css";
-import SortCard from "./SortCard/SortCard";
-import FilterCard from "./FilterCard/FilterCard";
+import SortCard from "../SortCard/SortCard";
+import FilterCard from "../FilterCard/FilterCard";
 import { Button } from "@mui/material";
-
-const ActionContainer = () => {
+const ActionContainer = ({ movies }) => {
   return (
     <div className="action_container">
       <SortCard />
       <FilterCard />
-
       <Button
         style={{
           fontWeight: "bold",

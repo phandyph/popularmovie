@@ -2,12 +2,10 @@ import ActionContainer from "../ActionContainer/ActionContainer";
 import CardContainer from "../CardContainer/CardContainer";
 import "./MainContainer.css";
 
-const MainContainer = ({
-  movies
-}) => {
+const MainContainer = ({ movies }) => {
   return (
     <div className="body">
-      <ActionContainer />
+      <ActionContainer movies={movies} />
       <CardContainer movies={movies} />
     </div>
   );
