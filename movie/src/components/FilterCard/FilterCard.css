@@ -14,9 +14,3 @@
     width: 100%;
 }
 
-.genreBox {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 300px;
-}
-

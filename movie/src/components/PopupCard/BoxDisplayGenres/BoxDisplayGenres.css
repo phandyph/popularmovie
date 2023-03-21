@@ -1,0 +1,11 @@
+.genreBox {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+}
+
+.filterItem:hover {
+    background-color: rgb(41, 193, 193);
+    cursor: pointer;
+    color: white;
+}
