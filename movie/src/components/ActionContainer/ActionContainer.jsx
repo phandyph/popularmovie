@@ -1,49 +1,101 @@
 import "./ActionContainer.css";
 import SortCard from "../SortCard/SortCard";
 import FilterCard from "../FilterCard/FilterCard";
-import { Button } from "@mui/material";
 import { useState } from "react";
-const ActionContainer = ({ movies }) => {
+
+const ActionContainer = ({ movies, onSearch }) => {
   /**
-   * handleChange: put on Select.
-   * handleChange: put on Genre.
-   * handleSubmit: put on Search.
-   *
-   *
+   * setSelectedGenres: store genres which we click at BoxDisplayGenres.jsx.
+   * setSortByOption: store option which we choose at SortPopup.jsx.
    */
-  const [selected, setSelected] = useState("Popularity Descending");
-  const [filtered, setFiltered] = useState("");
+  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [sortByOption, setSortByOption] = useState("");
+
   
-  // We can catch the value that we select.
-  const handleChangeOnSort = (e) => {
-    setSelected(e.target.value);
+  const handleSortByOption = (option) => {
+    setSortByOption(option);
   };
 
-  const handleChangeOnFilter = (e) => {
-    setFiltered(e.target.value);
+  const handleClickFilter = (selected) => {
+    setSelectedGenres(selected);
   };
 
-  console.log("Filter: ", filtered);
+  // compareGenres is used to get movie after compare genres which I clicked and genres of movies.
+  const compareGenres = () => {
+    // However I don't select (selectGenres), it still return value (movies.)
+    if (selectedGenres.length === 0) return movies;
+    // When I clicked, I can get value to put in array (genresClicked)
+    const genresClicked = movies.filter((item) => {
+      return selectedGenres.find((arr) => item.genres.includes(arr));
+    });
+    return genresClicked;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let movieAfterFilterOrSort = compareGenres();
+    switch (sortByOption) {
+      case "Popularity Ascending":
+        movieAfterFilterOrSort = movieAfterFilterOrSort.sort((a, b) =>
+          a.popularity > b.popularity ? 1 : -1
+        );
+        break;
+
+      case "Rating Descending":
+        movieAfterFilterOrSort = movieAfterFilterOrSort.sort((a, b) =>
+          a.vote_average < b.vote_average ? 1 : -1
+        );
+        break;
+
+      case "Rating Ascending":
+        movieAfterFilterOrSort = movieAfterFilterOrSort.sort((a, b) =>
+          a.vote_average > b.vote_average ? 1 : -1
+        );
+        break;
+
+      case "Release Date Descending":
+        movieAfterFilterOrSort = movieAfterFilterOrSort.sort((a, b) =>
+          new Date(a.release_date) < new Date(b.release_date) ? 1 : -1
+        );
+        break;
+
+      case "Release Date Ascending":
+        movieAfterFilterOrSort = movieAfterFilterOrSort.sort((a, b) =>
+          new Date(a.release_date) > new Date(b.release_date) ? 1 : -1
+        );
+        break;
+
+      case "Title (A-Z)":
+        movieAfterFilterOrSort = movieAfterFilterOrSort.sort((a, b) =>
+          a.title > b.title ? 1 : -1
+        );
+        break;
+
+      case "Title (Z-A)":
+        movieAfterFilterOrSort = movieAfterFilterOrSort.sort((a, b) =>
+          a.title < b.title ? 1 : -1
+        );
+        break;
+
+      default:
+        movieAfterFilterOrSort = movieAfterFilterOrSort.sort((a, b) =>
+          a.popularity < b.popularity ? 1 : -1
+        );
+        break;
+    }
+    // Here, I transfer data from child component (ActionContainer.jsx) to parent component (MainContainer.jsx)
+    onSearch?.([...movieAfterFilterOrSort]);
+  };
 
   return (
     <div className="action_container">
-      <SortCard handleChangeOnSort={handleChangeOnSort} selected={selected} />
-      <FilterCard handleChangeOnFilter={handleChangeOnFilter} filtered={filtered} />
-      <Button
-        style={{
-          fontWeight: "bold",
-          fontSize: "1rem",
-          padding: "12px",
-          backgroundColor: "rgb(229, 232, 235)",
-          color: "black",
-          boxShadow:
-            "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
-          borderRadius: "10px",
-        }}
-        sx={{ width: 1 }}
-      >
+      {/* onClick word is easy for use to know that we need onClick, not onChange, onMouse, ... */}
+      <SortCard onClick={handleSortByOption} />
+      <FilterCard onClick={handleClickFilter} />
+      <button type="button" className="btnSearch" onClick={handleSubmit}>
         Search
-      </Button>
+      </button>
+      {/* </form> */}
     </div>
   );
 };

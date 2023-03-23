@@ -1,11 +1,10 @@
 .btn {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    font-weight: bold;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
 }
 
 .btn:hover {
-    background-color: rgb(17, 18, 18);
-    color: white;
+  background-color: rgb(174, 199, 199);
 }

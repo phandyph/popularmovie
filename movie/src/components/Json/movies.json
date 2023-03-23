@@ -2970,7 +2970,7 @@
       "trailer_yt": "ue80QwXMRHg"
     },
     {
-      "genres": "Drama",
+      "genres": ["Drama"],
       "homepage": "https://tv.apple.com/movie/palmer/umc.cmc.40qrv09i2yfh8iilyi4s8vfi",
       "id": 458220,
       "original_language": "English",
@@ -3368,7 +3368,7 @@
       "trailer_yt": "0ZNsLy2IwcY"
     },
     {
-      "genres": "Drama",
+      "genres": ["Drama"],
       "id": 600354,
       "original_language": "English",
       "overview": "A man refuses all assistance from his daughter as he ages and, as he tries to make sense of his changing circumstances, he begins to doubt his loved ones, his own mind and even the fabric of his reality.",
@@ -3943,7 +3943,7 @@
       "trailer_yt": "bskgNOXbdiE"
     },
     {
-      "genres": "Drama",
+      "genres": ["Drama"],
       "homepage": "https://breakthroughmovie.com/",
       "id": 514439,
       "original_language": "English",
@@ -4290,7 +4290,7 @@
     },
     {
       "budget": 30000000,
-      "genres": "Drama",
+      "genres": ["Drama"],
       "homepage": "https://www.foxmovies.com/movies/the-passion-of-the-christ",
       "id": 615,
       "original_language": "English",
@@ -4345,7 +4345,7 @@
     },
     {
       "budget": 34000000,
-      "genres": "Action",
+      "genres": ["Action"],
       "homepage": "http://www.stxfilms.com/greenland/",
       "id": 524047,
       "original_language": "English",
@@ -5015,7 +5015,7 @@
       "trailer_yt": "JYLdTuL9Wjw"
     },
     {
-      "genres": "Comedy",
+      "genres": ["Comedy"],
       "id": 610461,
       "original_language": "Spanish",
       "overview": "Regina, our young protagonist, always dreamed of getting married. And she did it - but the dream lasted much less than she thought and now she has to face life in a very funny way as a divorcee.",

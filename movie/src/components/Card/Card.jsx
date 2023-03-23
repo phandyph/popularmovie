@@ -6,7 +6,8 @@ import DotIcon from "../Icons/DotIcon/DotIcon";
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8N3x8fGVufDB8fHx8&w=1000&q=80";
 
-const Card = ({ movies }) => {
+// Here, I am using movies from json. Not movies from sort
+const Card = ({ movies}) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={3}>
@@ -21,9 +22,11 @@ const Card = ({ movies }) => {
                   <img src={IMAGE_URL} alt="" />
                 </Item>
                 <Item className="description">
-                  <Item className="runTime">100</Item>
+                  <Item className="runTime">{movie.vote_average}</Item>
                   <p className="bold">{movie.title}</p>
-                  <p>{movie.release_date}</p>
+                  <p>Date: {movie.release_date}</p>
+                  <p>Rate: {movie.vote_average}</p>
+                  <p>Popularity: {movie.popularity}</p>
                 </Item>
               </Grid>
             </Grid>

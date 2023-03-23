@@ -1,10 +1,10 @@
 [
-    { "id": 1, "label": "Popularity Descending", "value": "Popularity Descending" },
-    { "id": 2, "label": "Popularity Ascending", "value": "Popularity Ascending" },
-    { "id": 3, "label": "Rating Descending", "value": "Rating Descending" },
-    { "id": 4, "label": "Rating Ascending", "value": "Rating Ascending" },
-    { "id": 5, "label": "Release Data Descending", "value": "Release Data Descending" },
-    { "id": 6, "label": "Release Data Ascending", "value": "Release Data Ascending" },
-    { "id": 7, "label": "Title (A-Z)", "value": "Title (A-Z)" },
-    { "id": 8, "label": "Title (Z-A)", "value": "Title (Z-A)" }
+    { "id": 1, "label": "Popularity Descending", "value": "popularity descending" },
+    { "id": 2, "label": "Popularity Ascending", "value": "dopularity ascending" },
+    { "id": 3, "label": "Rating Descending", "value": "rating descending" },
+    { "id": 4, "label": "Rating Ascending", "value": "rating ascending" },
+    { "id": 5, "label": "Release Date Descending", "value": "release date descending" },
+    { "id": 6, "label": "Release Date Ascending", "value": "release date ascending" },
+    { "id": 7, "label": "Title (A-Z)", "value": "title (a-z)" },
+    { "id": 8, "label": "Title (Z-A)", "value": "title (z-a)" }
   ]

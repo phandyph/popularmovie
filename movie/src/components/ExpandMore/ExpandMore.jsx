@@ -1,8 +1,6 @@
 import IconButton from "@mui/material/IconButton";
 import { styled } from "@mui/material/styles";
 
-// I still use styled because it help to icons change.
-
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;

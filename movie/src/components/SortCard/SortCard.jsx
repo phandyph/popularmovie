@@ -11,18 +11,11 @@ import sortOption from "../Json/SortOption.json";
 import ExpandMore from "../ExpandMore/ExpandMore";
 import SortPopup from "../PopupCard/SortPopup/SortPopup";
 
-const SortCard = () => {
+const SortCard = ({ onClick }) => {
   const [expanded, setExpanded] = useState(false);
-  const [selectValue, setSelectValue] = useState("Popularity Descending");
-  console.log("selected value: ", selectValue);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
-  };
-
-  const handleChange = (e) => {
-    setSelectValue(e.target.value);
-    console.log(e.target.value);
   };
 
   return (
@@ -53,8 +46,8 @@ const SortCard = () => {
           <Typography paragraph>Sort Results By</Typography>
           <SortPopup
             sortOption={sortOption}
-            selectValue={selectValue}
-            handleChange={handleChange}
+            value={"Popularity Descending"}
+            onClick={onClick}
           />
         </CardContent>
       </Collapse>

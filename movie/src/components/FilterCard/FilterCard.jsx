@@ -7,8 +7,9 @@ import BoxDisplayGenres from "../PopupCard/BoxDisplayGenres/BoxDisplayGenres";
 import genres from "../Json/Genres.json";
 import ExpandMore from "../ExpandMore/ExpandMore";
 
-const FilterCard = () => {
+const FilterCard = ({ isChecked, onClick }) => {
   const [expanded, setExpanded] = React.useState(false);
+  
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -26,7 +27,12 @@ const FilterCard = () => {
           <ArrowForwardIosIcon />
         </ExpandMore>
       </CardActions>
-      <BoxDisplayGenres genres={genres} expanded={expanded} />
+      <BoxDisplayGenres
+        genres={genres}
+        expanded={expanded}
+        isChecked={isChecked}
+        onClick={onClick}
+      />
     </Card>
   );
 };
