@@ -1,0 +1,10 @@
+.btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: rgb(174, 199, 199);
+}

@@ -1,0 +1,10 @@
+[
+    { "id": 1, "label": "Popularity Descending", "value": "popularity descending" },
+    { "id": 2, "label": "Popularity Ascending", "value": "dopularity ascending" },
+    { "id": 3, "label": "Rating Descending", "value": "rating descending" },
+    { "id": 4, "label": "Rating Ascending", "value": "rating ascending" },
+    { "id": 5, "label": "Release Date Descending", "value": "release date descending" },
+    { "id": 6, "label": "Release Date Ascending", "value": "release date ascending" },
+    { "id": 7, "label": "Title (A-Z)", "value": "title (a-z)" },
+    { "id": 8, "label": "Title (Z-A)", "value": "title (z-a)" }
+  ]

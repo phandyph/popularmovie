@@ -1,0 +1,35 @@
+.genreBox {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+}
+
+.labelUnClick {
+  border-radius: 10px;
+  font-weight: 700px;
+  font-size: 0.875rem;
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+.labelUnClick:hover {
+  background-color: rgb(23, 144, 144);
+  color: white;
+}
+
+.labelClicked {
+  background-color: rgb(23, 144, 144);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700px;
+  font-size: 0.875rem;
+  color: white;
+  padding: 5px;
+  border: 1px solid gray;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
