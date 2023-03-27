@@ -1,25 +1,25 @@
 import { Box } from "@mui/material";
-import FilterPopup from "../FilterPopup/FilterPopup";
+import FilterPopup from "../FilterPopup";
 import Collapse from "@mui/material/Collapse";
 import "./GenresDisplay.css";
 import { useState } from "react";
 
-const BoxDisplayGenres = ({ genres, expanded, onClick }) => {
+const GenresDisplay = ({ genres, expanded, onClick }) => {
   const [genreList, setGenreList] = useState([]);
-  let genreSelect = [...genreList];
+  let genresSelected = [...genreList];
 
   const isGenreSelected = (genre) =>
     genreList.includes(genre) ? "ableGenre" : "disableGenre";
 
   const handleClickFilter = (genre) => {
     if (genre && !genreList.includes(genre)) {
-      genreSelect = [...genreList, genre];
+      genresSelected = [...genreList, genre];
     } else {
-      genreSelect.splice(genreList.indexOf(genre), 1);
+      genresSelected.splice(genreList.indexOf(genre), 1);
     }
 
-    setGenreList(genreSelect);
-    onClick?.(genreSelect);
+    setGenreList(genresSelected);
+    onClick?.(genresSelected);
   };
 
   return (
@@ -42,4 +42,4 @@ const BoxDisplayGenres = ({ genres, expanded, onClick }) => {
     </Collapse>
   );
 };
-export default BoxDisplayGenres;
+export default GenresDisplay;

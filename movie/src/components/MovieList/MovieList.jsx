@@ -1,6 +1,6 @@
 import "./MovieList.css";
-import Navbar from "../Navbar/Index";
-import MainContainer from "../MainContainer/Index";
+import Navbar from "../Navbar";
+import MainContainer from "../MainContainer";
 import movies from "../Json/Movies.json";
 
 const MovieList = () => {

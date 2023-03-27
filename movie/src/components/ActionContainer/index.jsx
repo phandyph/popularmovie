@@ -1,27 +1,23 @@
 import "./ActionContainer.css";
-import SortCard from "../SortCard/Index";
-import FilterCard from "../FilterCard/Index";
-
+import SortCard from "../SortCard";
+import FilterCard from "../FilterCard";
 import { sort } from "../../util/sort";
 import { useState } from "react";
 
 const ActionContainer = ({ movies, onSearch }) => {
   const [selectedGenres, setSelectedGenres] = useState([]);
-  const [sortByOption, setSortByOption] = useState("");
+  const [sortOption, setSortOption] = useState("");
 
   const handleSortByOption = (option) => {
-    setSortByOption(option);
+    setSortOption(option);
   };
 
   const handleClickFilter = (selected) => {
     setSelectedGenres(selected);
   };
 
-  // compareGenres is used to get movie after compare genres which I clicked and genres of movies.
-  const compareGenres = () => {
-    // However I don't select (selectGenres), it still return value (movies.)
+  const genresCompare = () => {
     if (selectedGenres.length === 0) return movies;
-    // When I clicked, I can get value to put in array (genresClicked)
     const genresClicked = movies.filter((item) => {
       return selectedGenres.find((arr) => item.genres.includes(arr));
     });
@@ -30,10 +26,9 @@ const ActionContainer = ({ movies, onSearch }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let movieAfterFilterOrSort = compareGenres();
-    sort({ sortByOption, list: movieAfterFilterOrSort });
+    let movieAfterFilterOrSort = genresCompare();
+    sort({ sortOption, list: movieAfterFilterOrSort });
 
-    // Here, I transfer data from child component (ActionContainer.jsx) to parent component (MainContainer.jsx)
     onSearch?.([...movieAfterFilterOrSort]);
   };
 
