@@ -1,19 +1,11 @@
 import "./ActionContainer.css";
-import SortCard from "../SortCard/SortCard";
-import FilterCard from "../FilterCard/FilterCard";
-/**
- * {sort}
- * The reason: {sort}: this function have already sorted.
- * and get it to use here.
- */
+import SortCard from "../SortCard/Index";
+import FilterCard from "../FilterCard/Index";
+
 import { sort } from "../../util/sort";
 import { useState } from "react";
 
-const ActionContainer = ({ movies, onSearch, onGet }) => {
-  /**
-   * setSelectedGenres: store genres which we click at BoxDisplayGenres.jsx.
-   * setSortByOption: store option which we choose at SortPopup.jsx.
-   */
+const ActionContainer = ({ movies, onSearch }) => {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [sortByOption, setSortByOption] = useState("");
 

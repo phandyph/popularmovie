@@ -7,7 +7,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./SortCard.css";
 import { useState } from "react";
 import sortOption from "../Json/SortOption.json";
-import ExpandMore from "../ExpandMore/ExpandMore";
+import ExpandMore from "../ExpandMore/Index";
 import SortPopup from "../PopupCard/SortPopup/SortPopup";
 
 const SortCard = ({ onClick }) => {

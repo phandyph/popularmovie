@@ -1,5 +1,5 @@
 import "./CardContainer.css";
-import Card from "../Card/Card";
+import Card from "../Card/Index";
 
 const CardContainer = ({ movies }) => {
   return (

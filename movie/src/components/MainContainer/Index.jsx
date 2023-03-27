@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ActionContainer from "../ActionContainer/ActionContainer";
+import ActionContainer from "../ActionContainer/Index";
 import CardContainer from "../CardContainer";
 import "./MainContainer.css";
 import movies from "../Json/Movies.json";

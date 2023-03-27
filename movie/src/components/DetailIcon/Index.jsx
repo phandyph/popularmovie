@@ -2,8 +2,8 @@ import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Menu } from "@mui/material";
-import "./DotIcon.css";
-import DetailPopup from "../../PopupCard/DetailPopup/DetailPopup";
+import "./DetailIcon.css";
+import DetailPopup from "../PopupCard/DetailPopup/Index";
 
 const MoreHorizICon = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);

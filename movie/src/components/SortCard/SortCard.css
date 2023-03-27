@@ -3,6 +3,7 @@
   border-radius: "8px";
   max-width: 345px;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .select {

@@ -9,14 +9,14 @@
 
 .leftNav {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-start;
   height: fit-content;
 }
 
 .rightNav {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-start;
   height: fit-content;
 }

@@ -2,9 +2,9 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./FilterCard.css";
-import BoxDisplayGenres from "../PopupCard/BoxDisplayGenres/BoxDisplayGenres";
+import GenresDisplay from "../PopupCard/GenresDisplay/Index";
 import genres from "../Json/Genres.json";
-import ExpandMore from "../ExpandMore/ExpandMore";
+import ExpandMore from "../ExpandMore/Index";
 import { useState } from "react";
 
 const FilterCard = ({ isChecked, onClick }) => {
@@ -27,7 +27,7 @@ const FilterCard = ({ isChecked, onClick }) => {
           <ArrowForwardIosIcon />
         </ExpandMore>
       </CardActions>
-      <BoxDisplayGenres
+      <GenresDisplay
         genres={genres}
         expanded={expanded}
         isChecked={isChecked}

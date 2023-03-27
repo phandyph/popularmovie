@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import FilterPopup from "../FilterPopup/FilterPopup";
 import Collapse from "@mui/material/Collapse";
-import "./BoxDisplayGenres.css";
+import "./GenresDisplay.css";
 import { useState } from "react";
 
 const BoxDisplayGenres = ({ genres, expanded, onClick }) => {
@@ -26,7 +26,7 @@ const BoxDisplayGenres = ({ genres, expanded, onClick }) => {
     <Collapse in={expanded} timeout="auto" unmountOnExit>
       <hr />
       <Box className="genreBox">
-        {genres.map((genre, i) => {
+        {genres.map((genre) => {
           return (
             <FilterPopup key={genre.id}>
               <button

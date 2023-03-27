@@ -49,8 +49,3 @@ export const sort = ({sortByOption, list}) => {
       break;
   }
 }
-
-
-
-
-
