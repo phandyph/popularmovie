@@ -1,15 +1,15 @@
 import "./MovieList.css";
 import Navbar from "../Navbar/Navbar";
 import MainContainer from "../MainContainer/MainContainer";
-import movies from "../Json/movies.json";
+import movies from "../Json/Movies.json";
 
 const MovieList = () => {
   return (
     <div className="movie">
-      <div className="nav-hight">
+      <div className="navHight">
         <Navbar />
       </div>
-      <div className="all-content">
+      <div className="allContent">
         <h3 className="title">Popular Movie</h3>
         <MainContainer movies={movies} />
       </div>

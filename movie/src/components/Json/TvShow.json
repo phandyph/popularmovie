@@ -1,0 +1,6 @@
+[
+    { "id": 1, "label": "Popular" },
+    { "id": 2, "label": "Airing Today" },
+    { "id": 3, "label": "On TV" },
+    { "id": 4, "label": "Top Rate" }
+]

@@ -9,9 +9,11 @@ const SortCard = ({ sortOption, onClick }) => {
 
   const handleOnChange = (option) => {
     setSelected(option.target.value);
-    // onClick get from ActionContainer.jsx
-    // .? have value or don't, it work as normal.
-    // we no need ?. if we sure that it is not empty.
+    /**
+     * onClick get from ActionContainer.jsx
+     * .? have value or don't, it work as normal.
+     *  we no need ?. if we sure that it is not empty.
+     */
     onClick?.(option.target.value);
   };
 

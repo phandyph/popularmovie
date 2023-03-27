@@ -1,111 +1,57 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import { FaSearch, FaPlus } from "react-icons/fa";
-
+import SearchIcon from "@mui/icons-material/Search";
+import AddIcon from "@mui/icons-material/Add";
+import mobileList from "../Json/Mobile.json";
+import tvShow from "../Json/TvShow.json";
+import more from "../Json/More.json";
+import NavbarPopup from "../PopupCard/NavbarPopup/NavbarPopup";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const mobileList = [
-    { id: 1, label: "Popular" },
-    { id: 2, label: "Now Playing" },
-    { id: 3, label: "Upcoming" },
-    { id: 4, label: "Top Rated" },
-  ];
-
-  const tvShow = [
-    { id: 1, label: "Popular" },
-    { id: 2, label: "Airing Today" },
-    { id: 3, label: "On TV" },
-    { id: 4, label: "Top Rate" },
-  ];
-
-  const more = [
-    { id: 1, label: "Discussion" },
-    { id: 2, label: "Leaderboard" },
-    { id: 3, label: "Support" },
-    { id: 4, label: "API" },
-  ];
-
-  const other = [
-    { id: 1, label: <FaPlus /> },
-    { id: 2, label: "EN" },
-    { id: 3, label: "JoinTMDB" },
-    { id: 4, label: <FaSearch /> },
-  ];
-
   return (
     <Router>
       <div className="navbar">
-        <ul className="left-nav">
-          <ul className="logo-container">
-            <li className="logo">TMDB</li>
-            <li className="logo-color"></li>
-          </ul>
-
-          <li className="w3-dropdown-hover w3-mobile li-nav">
+        <ul className="leftNav">
+          <img
+            className="logo"
+            src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+            alt=""
+          />
+          <li className="w3-dropdown-hover w3-mobile liNav">
             <span>Movie</span>
-            <ul className="w3-dropdown-content list-li w3-bar-block w3-dark-white">
-              {mobileList.map((mobile, i) => {
-                return (
-                  <li
-                    key={mobile.id}
-                    className="li-each-nav w3-bar-item w3-button w3-mobile"
-                  >
-                    {mobile.label}
-                  </li>
-                );
-              })}
-            </ul>
+            <NavbarPopup navbarList={mobileList} />
           </li>
 
-          <li className="w3-dropdown-hover w3-mobile li-nav">
+          <li className="w3-dropdown-hover w3-mobile liNav">
             <span>TVShows</span>
-            <ul className="w3-dropdown-content list-li w3-bar-block w3-dark-white">
-              {tvShow.map((tv, i) => {
-                return (
-                  <li
-                    key={tv.id}
-                    className="li-each-nav w3-bar-item w3-button w3-mobile"
-                  >
-                    {tv.label}
-                  </li>
-                );
-              })}
-            </ul>
+            <NavbarPopup navbarList={tvShow} />
+            <li className="liEachNav w3-bar-item w3-button w3-mobile"></li>
           </li>
 
-          <li className="w3-dropdown-hover w3-mobile li-nav">
+          <li className="w3-dropdown-hover w3-mobile liNav">
             <span>People</span>
-            <ul className="w3-dropdown-content list-li w3-bar-block w3-dark-white">
-              <li className="li-each-nav w3-bar-item w3-button w3-mobile">
+            <ul className="w3-dropdown-content listLi w3-bar-block w3-dark-white">
+              <li className="liEachNav w3-bar-item w3-button w3-mobile">
                 PopularPeople
               </li>
             </ul>
           </li>
-          <li className="w3-dropdown-hover w3-mobile li-nav">
+
+          <li className="w3-dropdown-hover w3-mobile liNav">
             <span>More</span>
-            <ul className="w3-dropdown-content list-li w3-bar-block w3-dark-white">
-              {more.map((_more, i) => {
-                return (
-                  <li
-                    key={_more.id}
-                    className="li-each-nav w3-bar-item w3-button w3-mobile"
-                  >
-                    {_more.label}
-                  </li>
-                );
-              })}
-            </ul>
+            <NavbarPopup navbarList={more} />
           </li>
         </ul>
 
-        <ul className="right-nav">
-          {other.map((_other, i) => {
-            return (
-              <li key={_other.id} className="li-nav">
-                {_other.label}
-              </li>
-            );
-          })}
+        <ul className="rightNav">
+          <li className="liNav">
+            <AddIcon />
+          </li>
+          <li className="liNav">EN</li>
+          <li className="liNav">JoinTMDB</li>
+          <li className="liNav search">
+            <SearchIcon />
+          </li>
         </ul>
       </div>
     </Router>

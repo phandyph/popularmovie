@@ -5,19 +5,21 @@ import "./BoxDisplayGenres.css";
 import { useState } from "react";
 
 const BoxDisplayGenres = ({ genres, expanded, onClick }) => {
-  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [genreList, setGenreList] = useState([]);
+  let genreSelect = [...genreList];
 
-  const isClicked = (genre) =>
-    selectedGenres.includes(genre) ? "labelClicked" : "labelUnClick";
+  const isGenreSelected = (genre) =>
+    genreList.includes(genre) ? "ableGenre" : "disableGenre";
+
   const handleClickFilter = (genre) => {
-    var genresClicked = [...selectedGenres];
-    if (genre && !selectedGenres.includes(genre)) {
-      genresClicked = [...selectedGenres, genre];
+    if (genre && !genreList.includes(genre)) {
+      genreSelect = [...genreList, genre];
     } else {
-      genresClicked.splice(selectedGenres.indexOf(genre), 1);
+      genreSelect.splice(genreList.indexOf(genre), 1);
     }
-    setSelectedGenres(genresClicked);
-    onClick?.(genresClicked);
+
+    setGenreList(genreSelect);
+    onClick?.(genreSelect);
   };
 
   return (
@@ -29,7 +31,7 @@ const BoxDisplayGenres = ({ genres, expanded, onClick }) => {
             <FilterPopup key={genre.id}>
               <button
                 onClick={() => handleClickFilter(genre.label)}
-                className={isClicked(genre.label)}
+                className={isGenreSelected(genre.label)}
               >
                 {genre.label}
               </button>

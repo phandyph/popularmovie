@@ -1,0 +1,6 @@
+[
+    { "id": 1, "label": "Discussion" },
+    { "id": 2, "label": "Leaderboard" },
+    { "id": 3, "label": "Support" },
+    { "id": 4, "label": "API" }
+]

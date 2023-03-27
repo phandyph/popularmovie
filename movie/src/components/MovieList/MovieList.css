@@ -1,18 +1,13 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .movie {
   width: 100%;
 }
 
-.all-content {
+.allContent {
   width: 70%;
   margin: auto;
 }
 
-.nav-hight {
+.navHight {
   background-color: rgb(3, 25, 96);
   height: fit-content;
   display: flex;
