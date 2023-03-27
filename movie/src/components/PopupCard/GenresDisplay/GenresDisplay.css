@@ -4,7 +4,7 @@
   max-width: 300px;
 }
 
-.labelUnClick {
+.disableGenre {
   border-radius: 10px;
   font-weight: 700px;
   font-size: 0.875rem;
@@ -12,13 +12,13 @@
   border: 1px solid gray;
 }
 
-.labelUnClick:hover {
+.disableGenre:hover {
   background-color: rgb(23, 144, 144);
   color: white;
 }
 
-.labelClicked {
-  background-color: rgb(23, 144, 144);
+.ableGenre {
+  background-color: rgb(60, 189, 189);
   border: none;
   border-radius: 10px;
   font-weight: 700px;

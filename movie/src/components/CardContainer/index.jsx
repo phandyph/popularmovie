@@ -1,8 +1,9 @@
 import "./CardContainer.css";
-import Card from "../Card/Card";
+import Card from "../Card";
+
 const CardContainer = ({ movies }) => {
   return (
-    <div className="card_container">
+    <div className="cardContainer">
       <Card movies={movies} />
     </div>
   );

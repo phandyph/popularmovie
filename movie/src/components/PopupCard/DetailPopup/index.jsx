@@ -1,16 +1,16 @@
 import { Grid, Typography } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import "./DotPopup.css";
-const DotPopup = ({ handleClose }) => {
+import "./DetailPopup.css";
+const DetailPopup = ({ handleClose }) => {
   return (
-    <Grid className="cardPopup" onClick={handleClose} fullWidth>
+    <Grid className="detailPopup" onClick={handleClose} fullWidth>
       <Typography>Want to rate or add this item to a list?</Typography>
-      <Grid className="btn">
+      <Grid className="card">
         <button className="labelBtn">Login</button>
         <ArrowForwardIosIcon />
       </Grid>
       <Typography>Not a member?</Typography>
-      <Grid className="btn">
+      <Grid className="card">
         <button className="labelBtn">Sign up and join the community</button>
         <ArrowForwardIosIcon />
       </Grid>
@@ -18,4 +18,4 @@ const DotPopup = ({ handleClose }) => {
   );
 };
 
-export default DotPopup;
+export default DetailPopup;

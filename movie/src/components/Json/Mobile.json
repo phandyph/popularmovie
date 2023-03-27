@@ -1,0 +1,6 @@
+[
+    { "id": 1, "label": "Popular" },
+    { "id": 2, "label": "Now Playing" },
+    { "id": 3, "label": "Upcoming" },
+    { "id": 4, "label": "Top Rated" }
+]

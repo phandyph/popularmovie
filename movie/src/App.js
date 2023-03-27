@@ -1,4 +1,4 @@
-import MovieList from './components/MovieList/MovieList'
+import MovieList from "./components/MovieList/MovieList";
 function App() {
   return (
     <MovieList/>

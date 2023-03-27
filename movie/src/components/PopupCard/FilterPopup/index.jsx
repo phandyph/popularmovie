@@ -7,10 +7,6 @@ const FilterPopup = (props) => {
   return (
     <Box
       className="box"
-      /**
-       * sx here important on display each genre.
-       * If no sx, each genre doesn't display.
-       */
       sx={{
         p: 0.5,
         m: 0.5,

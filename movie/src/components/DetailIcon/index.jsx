@@ -2,10 +2,10 @@ import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Menu } from "@mui/material";
-import "./DotIcon.css";
-import DotPopup from "../../PopupCard/DotPopup/DotPopup";
+import "./DetailIcon.css";
+import DetailPopup from "../PopupCard/DetailPopup";
 
-export default function LongMenu() {
+const DetailIcon = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -33,18 +33,11 @@ export default function LongMenu() {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        // I use style here because it is style prop.
-        PaperProps={{
-          style: {
-            width: "17%",
-            padding: "10px",
-            minWidth: "120px",
-            magin: "auto",
-          },
-        }}
       >
-        <DotPopup handleClose={handleClose} />
+        <DetailPopup handleClose={handleClose} />
       </Menu>
     </div>
   );
-}
+};
+
+export default DetailIcon;

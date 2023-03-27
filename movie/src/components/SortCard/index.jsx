@@ -1,4 +1,3 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
@@ -8,14 +7,14 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./SortCard.css";
 import { useState } from "react";
 import sortOption from "../Json/SortOption.json";
-import ExpandMore from "../ExpandMore/ExpandMore";
-import SortPopup from "../PopupCard/SortPopup/SortPopup";
+import ExpandMore from "../ExpandMore";
+import SortPopup from "../PopupCard/SortPopup";
 
 const SortCard = ({ onClick }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleExpandClick = () => {
-    setExpanded(!expanded);
+    setIsExpanded(!isExpanded);
   };
 
   return (
@@ -23,24 +22,24 @@ const SortCard = ({ onClick }) => {
       <CardActions
         className="card"
         disableSpacing
-        expand={expanded}
+        expand={isExpanded}
         onClick={handleExpandClick}
-        aria-expanded={expanded}
+        aria-expanded={isExpanded}
         aria-label="show more"
       >
         <span className="typeSort">Sort</span>
 
         <ExpandMore
-          expand={expanded}
+          expand={isExpanded}
           Typography
           onClick={handleExpandClick}
-          aria-expanded={expanded}
+          aria-expanded={isExpanded}
           aria-label="show more"
         >
           <ArrowForwardIosIcon />
         </ExpandMore>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <Collapse in={isExpanded} timeout="auto" unmountOnExit>
         <hr />
         <CardContent>
           <Typography paragraph>Sort Results By</Typography>

@@ -1,8 +1,12 @@
-.btn {
+.card {
   display: flex;
   align-items: center;
   width: 100%;
   font-weight: bold;
+}
+
+.detailPopup {
+  padding: 8px;
 }
 
 .btn:hover {
