@@ -1,10 +1,22 @@
 import "./CardContainer.css";
 import Card from "../Card";
-
-const CardContainer = ({ movies }) => {
+import ButtonLoadMore from "../ButtonLoadMore";
+const CardContainer = ({
+  movies,
+  onClick,
+  moviesDisplay,
+  fourIncreasement,
+}) => {
   return (
     <div className="cardContainer">
       <Card movies={movies} />
+      <br />
+      <br />
+      <ButtonLoadMore
+        moviesDisplay={moviesDisplay}
+        fourIncreasement={fourIncreasement}
+        onClick={onClick}
+      />
     </div>
   );
 };

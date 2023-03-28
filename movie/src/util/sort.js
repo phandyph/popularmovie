@@ -1,5 +1,5 @@
-export const sort = ({sortByOption, list}) => {
-  switch (sortByOption) {
+export const sort = ({sortOption, list}) => {
+  switch (sortOption) {
     case "Popularity Ascending":
       list = list.sort((a, b) =>
         a.popularity > b.popularity ? 1 : -1

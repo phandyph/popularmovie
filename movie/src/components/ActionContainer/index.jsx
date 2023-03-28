@@ -24,11 +24,11 @@ const ActionContainer = ({ movies, onSearch }) => {
     return genresClicked;
   };
 
+  // After click on handleSubmit: it will give movie to mainContainer.
   const handleSubmit = (e) => {
     e.preventDefault();
     let movieAfterFilterOrSort = genresCompare();
     sort({ sortOption, list: movieAfterFilterOrSort });
-
     onSearch?.([...movieAfterFilterOrSort]);
   };
 
