@@ -5,16 +5,14 @@ const CardContainer = ({
   movies,
   onClick,
   moviesDisplay,
-  fourIncreasement,
+  fourMoviesLength,
 }) => {
   return (
     <div className="cardContainer">
       <Card movies={movies} />
-      <br />
-      <br />
       <ButtonLoadMore
         moviesDisplay={moviesDisplay}
-        fourIncreasement={fourIncreasement}
+        fourMoviesLength={fourMoviesLength}
         onClick={onClick}
       />
     </div>
