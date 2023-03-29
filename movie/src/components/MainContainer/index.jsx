@@ -3,33 +3,35 @@ import ActionContainer from "../ActionContainer";
 import CardContainer from "../CardContainer";
 import "./MainContainer.css";
 import movies from "../Json/Movies.json";
+const START_INDEX = 0;
+const ITEMS_PER_PAGE = 4;
 
 const MainContainer = () => {
   const [movieList, setMovieList] = useState(movies);
-  const starterIndex = 0;
-  const fourLength = 4;
-  const [fourMoviesLength, setFourMoviesLength] = useState(fourLength);
-
-  // moviesDisplay, I just need it to compare to disable load more button.
-  const moviesDisplay = movieList.slice(starterIndex, fourMoviesLength).length;
+  const [fourMoviesLength, setFourMoviesLength] = useState(ITEMS_PER_PAGE);
+  const amountMoviesDisplay = movieList.slice(
+    START_INDEX,
+    fourMoviesLength
+  ).length;
 
   const onGetMoviesAfterDoAction = (moviesFromSorting) => {
     setMovieList(moviesFromSorting);
   };
 
   const onLoadMore = () => {
-    setFourMoviesLength(fourMoviesLength + fourLength);
+    setFourMoviesLength(fourMoviesLength + ITEMS_PER_PAGE);
   };
 
   return (
     <div className="body">
       <ActionContainer movies={movies} onSearch={onGetMoviesAfterDoAction} />
       <CardContainer
+        itemForCardContainer={{
+          items: movieList.slice(START_INDEX, fourMoviesLength),
+          fourItems: fourMoviesLength,
+          amountItemsDisplay: amountMoviesDisplay,
+        }}
         onClick={onLoadMore}
-        fourMoviesLength={fourMoviesLength}
-        moviesDisplay={moviesDisplay}
-        // Here is movieList to display on card, that's why I start to splice it from here.
-        movies={movieList.slice(starterIndex, fourMoviesLength)}
       />
     </div>
   );

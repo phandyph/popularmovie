@@ -21,10 +21,10 @@ const ActionContainer = ({ movies, onSearch }) => {
     const genresClicked = movies.filter((item) => {
       return selectedGenres.find((arr) => item.genres.includes(arr));
     });
+
     return genresClicked;
   };
 
-  // After click on handleSubmit: it will give movie to mainContainer.
   const handleSubmit = (e) => {
     e.preventDefault();
     let movieAfterFilterOrSort = genresCompare();

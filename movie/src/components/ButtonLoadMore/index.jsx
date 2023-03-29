@@ -1,9 +1,12 @@
 import "./ButtonLoadMore.css";
-const ButtonLoadMore = ({ onClick, fourMoviesLength, moviesDisplay }) => {
+const ButtonLoadMore = ({ loadMoreFunctionAndData }) => {
   return (
     <button
-      disabled={fourMoviesLength > moviesDisplay}
-      onClick={onClick}
+      disabled={
+        loadMoreFunctionAndData.fourMoviesLength >
+        loadMoreFunctionAndData.amountItemsDisplay
+      }
+      onClick={loadMoreFunctionAndData.onClick}
       className="loadMoreBtn"
       type="submit"
     >
