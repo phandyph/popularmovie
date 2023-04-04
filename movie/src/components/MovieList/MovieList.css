@@ -1,18 +1,78 @@
 .movie {
   width: 100%;
+  box-sizing: border-box;
+}
+.navHight {
+  width: 100%;
+  background-color: rgb(3, 25, 96);
 }
 
-.allContent {
-  width: 70%;
+.topIntro {
+  width: 80%;
+  margin: auto;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.actionBtn {
+  display: none;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: aqua;
+  width: 80%;
   margin: auto;
 }
 
-.navHight {
-  background-color: rgb(3, 25, 96);
-  height: fit-content;
-  display: flex;
-  align-items: center;
+.showItems {
+  display: block;
 }
-.title {
-  font-weight: bolder;
+
+.hideItems {
+  display: none;
+}
+
+@media screen and (max-width: 1537px) {
+  img {
+    object-fit: fill;
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  img {
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  /* Invole with navbar */
+  .liNav {
+    display: none;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  .actionBtn {
+    display: block;
+  }
+
+  .actionContainer {
+    display: none;
+  }
+
+  .bold {
+    font-size: 0.8rem;
+  }
+
+  .paragraph {
+    font-size: 0.8rem;
+  }
 }

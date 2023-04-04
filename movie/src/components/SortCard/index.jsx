@@ -6,9 +6,9 @@ import Typography from "@mui/material/Typography";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./SortCard.css";
 import { useState } from "react";
-import sortOption from "../Json/SortOption.json";
+import sortOption from "../../data/SortOption.json";
 import ExpandMore from "../ExpandMore";
-import SortPopup from "../PopupCard/SortPopup";
+import SortPopup from "../Features/SortPopup";
 
 const SortCard = ({ onClick }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -20,7 +20,6 @@ const SortCard = ({ onClick }) => {
   return (
     <Card className="cardTest">
       <CardActions
-        className="card"
         disableSpacing
         expand={isExpanded}
         onClick={handleExpandClick}

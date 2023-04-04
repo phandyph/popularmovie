@@ -3,7 +3,7 @@ import IconButton from "@mui/material/IconButton";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Menu } from "@mui/material";
 import "./DetailIcon.css";
-import DetailPopup from "../PopupCard/DetailPopup";
+import DetailPopup from "../Features/DetailPopup";
 
 const DetailIcon = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
