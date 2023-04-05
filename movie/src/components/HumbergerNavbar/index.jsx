@@ -6,10 +6,10 @@ import more from "../../data/More.json";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from "@mui/icons-material/Add";
 
-const HumbergerNavbar = ({ onSamsung }) => {
+const HumbergerNavbar = ({ onMobile }) => {
   return (
-    <div className={onSamsung ? "showMobileNavbar" : "hideMobileNavbar"}>
-      <div className="navbarBuger">
+    <div className={onMobile ? "showMobileNavbar" : "hideMobileNavbar"}>
+      <div className="hamburgerMenu">
         <div class="dropdownBuger">
           <button class="dropbtnBuger">Movie</button>
           <div class="dropdownContentBuger">

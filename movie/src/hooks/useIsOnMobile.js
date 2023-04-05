@@ -1,14 +1,12 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const getIsSamsung = () => window.innerWidth <= 1080;
-const getIsHumbergerIcon = () => window.innerWidth <=1080;
-export default function useIsOnSamsung() {
-    const [isSamsung, setIsSamsung] = useState(getIsSamsung());
+const getIsMobile = () => window.innerWidth <= 1080;
+export default function useIsOnMobile() {
+    const [isMobile, setIsMobile] = useState(getIsMobile());
 
     useEffect(() => {
         const onResize = () => {
-            setIsSamsung(getIsSamsung());
+            setIsMobile(getIsMobile());
         }
         window.addEventListener("resize", onResize);
     
@@ -17,23 +15,5 @@ export default function useIsOnSamsung() {
         }
     }, []);
     
-    return isSamsung;
-}
-
-export const useIsOnShowHumbergerIcon = () => {
-    const [isHumbergerIcon, setIsHumbergerIcon] = useState(getIsHumbergerIcon());
-
-    useEffect(() => {
-        const onResize = () => {
-            setIsHumbergerIcon(getIsHumbergerIcon());
-        }
-
-        window.addEventListener("resize", onResize);
-    
-        return () => {
-            window.removeEventListener("resize", onResize);
-        }
-    }, []);
-    
-    return isHumbergerIcon;
+    return isMobile;
 }

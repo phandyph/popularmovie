@@ -7,8 +7,7 @@ import more from "../../data/More.json";
 import NavbarPopup from "../Features/NavbarPopup";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import HumbergerNavbar from "../HumbergerNavbar";
-import useIsOnSamsung from "../../hooks/useIsOnMobile";
-import { useIsOnShowHumbergerIcon } from "../../hooks/useIsOnMobile";
+import useIsOnMobile from "../../hooks/useIsOnMobile";
 import { useState } from "react";
 import "./Navbar.css";
 import { useEffect } from "react";
@@ -16,15 +15,16 @@ const LOGO =
   "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg";
 
 const Navbar = () => {
-  const isHumbergerIcon = useIsOnShowHumbergerIcon();
-  const onSamsung = useIsOnSamsung();
+  const isHumbergerIcon = useIsOnMobile();
+  const onMobile = useIsOnMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // useEffect when onMobile change value from true to false or false to true.
   useEffect(() => {
-    if (!onSamsung) {
+    if (!onMobile) {
       setIsMenuOpen(false);
     }
-  }, [onSamsung]);
+  }, [onMobile]);
 
   return (
     <Router>
@@ -82,7 +82,7 @@ const Navbar = () => {
             <DehazeIcon />
           </li>
           <li>
-            <HumbergerNavbar onSamsung={isMenuOpen} />
+            <HumbergerNavbar onMobile={isMenuOpen} />
           </li>
         </ul>
       </div>
