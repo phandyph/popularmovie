@@ -67,6 +67,7 @@ const Navbar = () => {
           </li>
           <li className="liNav">EN</li>
           <li className="liNav">JoinTMDB</li>
+          {/* Need true or false to show and hide searchContainer */}
           <li className="liNav">
             <SearchIcon />
           </li>
