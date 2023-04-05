@@ -21,6 +21,7 @@ const ActionContainer = ({ movies, onSearch }) => {
     const genresClicked = movies.filter((item) => {
       return selectedGenres.find((arr) => item.genres.includes(arr));
     });
+
     return genresClicked;
   };
 
@@ -28,7 +29,6 @@ const ActionContainer = ({ movies, onSearch }) => {
     e.preventDefault();
     let movieAfterFilterOrSort = genresCompare();
     sort({ sortOption, list: movieAfterFilterOrSort });
-
     onSearch?.([...movieAfterFilterOrSort]);
   };
 

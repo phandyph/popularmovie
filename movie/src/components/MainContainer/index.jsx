@@ -3,20 +3,36 @@ import ActionContainer from "../ActionContainer";
 import CardContainer from "../CardContainer";
 import "./MainContainer.css";
 import movies from "../Json/Movies.json";
+const START_INDEX = 0;
+const ITEMS_PER_PAGE = 4;
 
 const MainContainer = () => {
   const [movieList, setMovieList] = useState(movies);
-  const handleOnGetMoviesAfterDoAction = (moviesFromSorting) => {
+  const [fourMoviesLength, setFourMoviesLength] = useState(ITEMS_PER_PAGE);
+  const amountMoviesDisplay = movieList.slice(
+    START_INDEX,
+    fourMoviesLength
+  ).length;
+
+  const onGetMoviesAfterDoAction = (moviesFromSorting) => {
     setMovieList(moviesFromSorting);
+  };
+
+  const onLoadMore = () => {
+    setFourMoviesLength(fourMoviesLength + ITEMS_PER_PAGE);
   };
 
   return (
     <div className="body">
-      <ActionContainer
-        movies={movies}
-        onSearch={handleOnGetMoviesAfterDoAction}
+      <ActionContainer movies={movies} onSearch={onGetMoviesAfterDoAction} />
+      <CardContainer
+        itemForCardContainer={{
+          items: movieList.slice(START_INDEX, fourMoviesLength),
+          fourItems: fourMoviesLength,
+          amountItemsDisplay: amountMoviesDisplay,
+        }}
+        onClick={onLoadMore}
       />
-      <CardContainer movies={movieList} />
     </div>
   );
 };
