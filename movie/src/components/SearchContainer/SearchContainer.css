@@ -1,0 +1,9 @@
+.showSearchContainer {
+  display: block;
+  position: absolute;
+  z-index: 8;
+}
+
+.hideSearchContainer {
+  display: none;
+}

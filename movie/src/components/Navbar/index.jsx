@@ -1,6 +1,5 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-import AddIcon from "@mui/icons-material/Add";
 import mobileList from "../../data/Mobile.json";
 import tvShow from "../../data/TvShow.json";
 import more from "../../data/More.json";
@@ -9,6 +8,7 @@ import DehazeIcon from "@mui/icons-material/Dehaze";
 import HumbergerNavbar from "../HumbergerNavbar";
 import useIsOnSamsung from "../../hooks/useIsOnMobile";
 import { useIsOnShowHumbergerIcon } from "../../hooks/useIsOnMobile";
+import SearchContainer from "../SearchContainer";
 import { useState } from "react";
 import "./Navbar.css";
 import { useEffect } from "react";
@@ -19,6 +19,11 @@ const Navbar = () => {
   const isHumbergerIcon = useIsOnShowHumbergerIcon();
   const onSamsung = useIsOnSamsung();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isShowSearchContainer, setIsShowSearchContainer] = useState(false);
+
+  const onShowSearchContainer = () => {
+    setIsShowSearchContainer(!isShowSearchContainer);
+  }
 
   useEffect(() => {
     if (!onSamsung) {
@@ -62,13 +67,10 @@ const Navbar = () => {
         </ul>
 
         <ul className="rightNav">
-          <li className={"liNav"}>
-            <AddIcon />
-          </li>
           <li className="liNav">EN</li>
           <li className="liNav">JoinTMDB</li>
           {/* Need true or false to show and hide searchContainer */}
-          <li className="liNav">
+          <li onClick={onShowSearchContainer} className="liNav">
             <SearchIcon />
           </li>
         </ul>
@@ -87,6 +89,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+      <SearchContainer isShowSearchContainer={isShowSearchContainer} />
     </Router>
   );
 };
