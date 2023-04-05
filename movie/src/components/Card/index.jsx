@@ -7,11 +7,11 @@ const IMAGE_URL =
 
 const Card = ({ movies }) => {
   return (
-    <Grid container spacing={3}>
+    <Grid container spacing={2}>
       {movies.map((movie) => {
         return (
-          <Grid className="grid" key={movie.id} item xs={12} md={6} lg={3}>
-            <Grid className="myCard">
+          <Grid className="grid" key={movie.id} item xs={6} md={6} lg={3}>
+            <div className="myCard">
               <Item className="moreDetail">
                 <DetailIcon />
               </Item>
@@ -21,11 +21,11 @@ const Card = ({ movies }) => {
               <Item className="description">
                 <Item className="voteAverage">{movie.vote_average}</Item>
                 <p className="bold">{movie.title}</p>
-                <p>Date: {movie.release_date}</p>
-                <p>Rate: {movie.vote_average}</p>
-                <p>Popularity: {movie.popularity}</p>
+                <p className="paragraph">Date: {movie.release_date}</p>
+                <p className="paragraph">Rate: {movie.vote_average}</p>
+                <p className="paragraph">Popularity: {movie.popularity}</p>
               </Item>
-            </Grid>
+            </div>
           </Grid>
         );
       })}

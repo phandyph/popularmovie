@@ -1,7 +1,8 @@
 import "./MovieList.css";
 import Navbar from "../Navbar";
 import MainContainer from "../MainContainer";
-import movies from "../Json/Movies.json";
+import movies from "../../data/Movies.json";
+// search bar should keep here.
 
 const MovieList = () => {
   return (
@@ -9,10 +10,11 @@ const MovieList = () => {
       <div className="navHight">
         <Navbar />
       </div>
-      <div className="allContent">
-        <h3 className="title">Popular Movie</h3>
-        <MainContainer movies={movies} />
+      <div className="topIntro">
+        <h3 className="pageTitle">Popular Movie</h3>
       </div>
+
+      <MainContainer movies={movies} />
     </div>
   );
 };

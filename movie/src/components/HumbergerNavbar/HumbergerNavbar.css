@@ -1,0 +1,65 @@
+.hamburgerMenu {
+  position: absolute;
+  background-color: rgb(176, 223, 244);
+  z-index: 5;
+  border-radius: 5px;
+}
+
+.dropdownBuger {
+  overflow: hidden;
+}
+
+.dropdownBuger .dropbtnBuger {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Display to the left of the card. */
+.dropdownContentBuger {
+  left: -160px;
+  right: 0;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdownContentBuger li {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdownContentBuger li:hover {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+.dropdownBuger:hover .dropdownContentBuger {
+  display: block;
+}
+
+.liNavBuger {
+  color: white;
+  font-weight: bold;
+}
+
+.showMobileNavbar {
+  display: block;
+}
+
+.hideMobileNavbar {
+  display: none;
+}

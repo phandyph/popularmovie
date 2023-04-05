@@ -1,18 +1,81 @@
 .movie {
   width: 100%;
+  box-sizing: border-box;
 }
-
-.allContent {
-  width: 70%;
-  margin: auto;
-}
-
 .navHight {
+  width: 100%;
   background-color: rgb(3, 25, 96);
-  height: fit-content;
-  display: flex;
-  align-items: center;
 }
-.title {
-  font-weight: bolder;
+
+.topIntro {
+  width: 80%;
+  margin: auto;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.pageTitle {
+  margin: 0;
+  padding: 0;
+}
+
+.showItems {
+  display: block;
+}
+
+.hideItems {
+  display: none;
+}
+
+@media screen and (max-width: 1537px) {
+  img {
+    object-fit: fill;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .actionContainer {
+    width: 30%;
+    margin-right: 10px;
+  }
+}
+
+
+@media screen and (max-width: 1170px) {
+  img {
+    object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  /* Invole with navbar */
+  .liNav {
+    display: none;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  .bold {
+    font-size: 0.8rem;
+  }
+
+  .paragraph {
+    font-size: 0.8rem;
+  }
+
+  .actionAndCardContainer {
+    flex-direction: column;
+  }
+
+  .actionContainer {
+    margin-left: 0;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .cardContainer {
+    margin-left: 0;
+  }
 }

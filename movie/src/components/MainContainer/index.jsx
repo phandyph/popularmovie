@@ -2,7 +2,8 @@ import { useState } from "react";
 import ActionContainer from "../ActionContainer";
 import CardContainer from "../CardContainer";
 import "./MainContainer.css";
-import movies from "../Json/Movies.json";
+import movies from "../../data/Movies.json";
+
 const START_INDEX = 0;
 const ITEMS_PER_PAGE = 4;
 
@@ -23,7 +24,7 @@ const MainContainer = () => {
   };
 
   return (
-    <div className="body">
+    <div className="actionAndCardContainer">
       <ActionContainer movies={movies} onSearch={onGetMoviesAfterDoAction} />
       <CardContainer
         itemForCardContainer={{
