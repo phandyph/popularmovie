@@ -1,6 +1,5 @@
 import { BrowserRouter as Router } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-import AddIcon from "@mui/icons-material/Add";
 import mobileList from "../../data/Mobile.json";
 import tvShow from "../../data/TvShow.json";
 import more from "../../data/More.json";
@@ -62,9 +61,6 @@ const Navbar = () => {
         </ul>
 
         <ul className="rightNav">
-          <li className={"liNav"}>
-            <AddIcon />
-          </li>
           <li className="liNav">EN</li>
           <li className="liNav">JoinTMDB</li>
           <li className="liNav">

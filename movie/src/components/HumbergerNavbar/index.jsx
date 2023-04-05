@@ -4,7 +4,6 @@ import mobileList from "../../data/Mobile.json";
 import tvShow from "../../data/TvShow.json";
 import more from "../../data/More.json";
 import SearchIcon from "@mui/icons-material/Search";
-import AddIcon from "@mui/icons-material/Add";
 
 const HumbergerNavbar = ({ onMobile }) => {
   return (
@@ -36,12 +35,6 @@ const HumbergerNavbar = ({ onMobile }) => {
           <div class="dropdownContentBuger">
             <NavbarPopup navbarList={more} />
           </div>
-        </div>
-
-        <div class="dropdownBuger">
-          <button class="dropbtnBuger">
-            <AddIcon />
-          </button>
         </div>
 
         <div class="dropdownBuger">
