@@ -1,14 +1,36 @@
-.card {
+.btnCard {
   display: flex;
   align-items: center;
   width: 100%;
   font-weight: bold;
+  padding: 3px;
+  cursor: pointer;
+}
+
+
+.btnCard:hover {
+  background-color: rgb(79, 141, 211);
+  color: white;
+}
+
+.brownText:hover {
+  color: white;
 }
 
 .detailPopup {
-  padding: 8px;
+  padding: 15px;
+  line-height: 1.5rem;
+  border-radius: 16px;
 }
 
-.btn:hover {
-  background-color: rgb(174, 199, 199);
+.titleButton {
+  display: flex;
+  justify-content: flex-start;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+
+.brownText {
+  color: rgb(140, 133, 133);
 }

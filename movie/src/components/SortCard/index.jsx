@@ -1,9 +1,7 @@
-import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import Typography from "@mui/material/Typography";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./SortCard.css";
 import { useState } from "react";
 import sortOption from "../../data/SortOption.json";
@@ -18,7 +16,7 @@ const SortCard = ({ onClick }) => {
   };
 
   return (
-    <Card className="cardTest">
+    <div className="eachActionCard">
       <CardActions
         disableSpacing
         expand={isExpanded}
@@ -35,7 +33,6 @@ const SortCard = ({ onClick }) => {
           aria-expanded={isExpanded}
           aria-label="show more"
         >
-          <ArrowForwardIosIcon />
         </ExpandMore>
       </CardActions>
       <Collapse in={isExpanded} timeout="auto" unmountOnExit>
@@ -49,7 +46,7 @@ const SortCard = ({ onClick }) => {
           />
         </CardContent>
       </Collapse>
-    </Card>
+    </div>
   );
 };
 export default SortCard;

@@ -66,9 +66,6 @@ const Navbar = () => {
           <li className="liNav">
             <SearchIcon />
           </li>
-        </ul>
-
-        <ul>
           <li
             onClick={() => {
               setIsMenuOpen(!isMenuOpen);

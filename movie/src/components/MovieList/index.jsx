@@ -2,7 +2,6 @@ import "./MovieList.css";
 import Navbar from "../Navbar";
 import MainContainer from "../MainContainer";
 import movies from "../../data/Movies.json";
-// search bar should keep here.
 
 const MovieList = () => {
   return (

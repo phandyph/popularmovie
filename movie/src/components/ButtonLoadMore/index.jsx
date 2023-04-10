@@ -1,18 +1,17 @@
 import "./ButtonLoadMore.css";
-const ButtonLoadMore = ({ loadMoreFunctionAndData }) => {
+const ButtonLoadMore = ({ loadMoreFunctionAndData, onClick }) => {
   return (
     <button
+      className="loadMoreBtn"
+      onClick={() => onClick()}
+      type="button"
       disabled={
         loadMoreFunctionAndData.fourMoviesLength >
         loadMoreFunctionAndData.amountItemsDisplay
       }
-      onClick={loadMoreFunctionAndData.onClick}
-      className="loadMoreBtn"
-      type="submit"
     >
-      Load More
+      <p>Load More</p>
     </button>
   );
 };
-
 export default ButtonLoadMore;
