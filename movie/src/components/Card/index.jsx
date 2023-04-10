@@ -3,43 +3,38 @@ import Grid from "@mui/material/Grid";
 import { Item } from "semantic-ui-react";
 import DetailIcon from "../DetailIcon";
 import months from "../../data/Month.json";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8N3x8fGVufDB8fHx8&w=1000&q=80";
 
 const Card = ({ movies }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const newMovies = [...movies];
-  const [idCardClicked, setIdCardClicked] = useState(0);
+  const movieList = [...movies];
+  const [cardId, setCardId] = useState(0);
+
+  const dateFormatted = useCallback((_date) => {
+    const date = new Date(_date);
+    const monthName = months[date.getMonth()];
+    return `${monthName} ${date.getDate()}, ${date.getFullYear()}`;
+  }, []);
 
   const handleClick = (event, id) => {
     setAnchorEl(event.currentTarget);
-    newMovies.forEach((mo) => {
+    movieList.forEach((mo) => {
       if (mo.id === id) {
-        setIdCardClicked(mo.id);
+        setCardId(mo.id);
       }
     });
   };
 
   const handleClose = () => {
     setAnchorEl(false);
-    setIdCardClicked(0);
+    setCardId(0);
   };
 
-  const isCheckOnCard = (idCard, idClick) =>
+  const isClickOnCard = (idCard, idClick) =>
     idCard === idClick ? "blur" : "none";
-
-  // Set date format
-  const formatDate = (newDate) => {
-    const d = new Date(newDate);
-    const year = d.getFullYear();
-    const date = d.getDate();
-    const monthIndex = d.getMonth();
-    const monthName = months[monthIndex];
-    const formatted = `${monthName} ${date} ${","} ${year}`;
-    return formatted.toString();
-  };
 
   return (
     <Grid container spacing={4}>
@@ -63,10 +58,12 @@ const Card = ({ movies }) => {
                 <Item className="description">
                   <Item className="voteAverage">{movie.vote_average}</Item>
                   <p className="bold paragraph">{movie.title}</p>
-                  <p className="paragraph">{formatDate(movie.release_date)}</p>
+                  <p className="paragraph">
+                    {dateFormatted(movie.release_date)}
+                  </p>
                 </Item>
               </div>
-              <div className={isCheckOnCard(idCardClicked, movie.id)}></div>
+              <div className={isClickOnCard(cardId, movie.id)}></div>
             </div>
           </Grid>
         );

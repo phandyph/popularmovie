@@ -7,8 +7,13 @@
   cursor: pointer;
 }
 
+
 .btnCard:hover {
   background-color: rgb(79, 141, 211);
+  color: white;
+}
+
+.brownText:hover {
   color: white;
 }
 
@@ -16,4 +21,16 @@
   padding: 15px;
   line-height: 1.5rem;
   border-radius: 16px;
+}
+
+.titleButton {
+  display: flex;
+  justify-content: flex-start;
+  line-height: 2rem;
+  font-weight: bold;
+}
+
+
+.brownText {
+  color: rgb(140, 133, 133);
 }

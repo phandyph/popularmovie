@@ -14,11 +14,10 @@ const DetailIcon = ({ id, handleClose, open, handleClick, anchorEl }) => {
         aria-controls={open ? "long-menu" : undefined}
         aria-expanded={open ? "true" : undefined}
         aria-haspopup="true"
-        onClick={(e)=>handleClick(e,id)}
+        onClick={(e) => handleClick(e, id)}
       >
         <MoreHorizIcon />
       </IconButton>
-
 
       <Menu
         id="long-menu"

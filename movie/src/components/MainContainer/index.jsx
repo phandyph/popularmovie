@@ -24,19 +24,17 @@ const MainContainer = () => {
   };
 
   return (
-    <>
-      <div className="actionAndCardContainer">
-        <ActionContainer movies={movies} onSearch={onGetMoviesAfterDoAction} />
-        <CardContainer
-          itemForCardContainer={{
-            items: movieList.slice(START_INDEX, fourMoviesLength),
-            fourItems: fourMoviesLength,
-            amountItemsDisplay: amountMoviesDisplay,
-          }}
-          onClick={onLoadMore}
-        />
-      </div>
-    </>
+    <div className="actionAndCardContainer">
+      <ActionContainer movies={movies} onSearch={onGetMoviesAfterDoAction} />
+      <CardContainer
+        itemForCardContainer={{
+          items: movieList.slice(START_INDEX, fourMoviesLength),
+          fourItems: fourMoviesLength,
+          amountItemsDisplay: amountMoviesDisplay,
+        }}
+        onClick={onLoadMore}
+      />
+    </div>
   );
 };
 
