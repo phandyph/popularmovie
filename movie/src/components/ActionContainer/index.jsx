@@ -1,7 +1,7 @@
 import "./ActionContainer.css";
 import SortCard from "../SortCard";
 import FilterCard from "../FilterCard";
-import { sort } from "../../util/functions.js";
+import { sort } from "../../util/sort";
 import { useState } from "react";
 
 const ActionContainer = ({ movies, onSearch }) => {
