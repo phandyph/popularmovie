@@ -33,7 +33,7 @@ const Card = ({ movies }) => {
     setCardId(0);
   };
 
-  const isClickOnCard = (idCard, idClick) =>
+  const isCardClicked = (idCard, idClick) =>
     idCard === idClick ? "blur" : "none";
 
   return (
@@ -63,7 +63,7 @@ const Card = ({ movies }) => {
                   </p>
                 </Item>
               </div>
-              <div className={isClickOnCard(cardId, movie.id)}></div>
+              <div className={isCardClicked(cardId, movie.id)}></div>
             </div>
           </Grid>
         );
