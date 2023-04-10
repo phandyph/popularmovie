@@ -41,6 +41,11 @@ const Card = ({ movies }) => {
     return formatted.toString();
   };
 
+  // // Set vote_average be %
+  // const percentage = (voteAverage) => {
+  //   return voteAverage * 10;
+  // };
+
   return (
     <Grid container spacing={4}>
       {movies.map((movie) => {
@@ -61,7 +66,32 @@ const Card = ({ movies }) => {
                   <img src={IMAGE_URL} alt="" />
                 </Item>
                 <Item className="description">
-                  <Item className="voteAverage">{movie.vote_average}</Item>
+                  <Item className="voteAverage">
+                    {/* <svg viewBox="0 0 64 64" className="pie">
+                      <circle r="40%" cx="50%" cy="50%" stroke="green" />
+                      <text
+                        fill="#FFFFFF"
+                        font-width="bold"
+                        font-size="20"
+                        x="20"
+                        y="40"
+                      >
+                        {percentage(movie.vote_average)}
+                      </text>
+                    </svg> */}
+
+                    <div className="outer_ring">
+                      <div
+                        className="user_score_chart 5e55ba97a93d2500134fa1ee"
+                        data-percent="73.0"
+                      >
+                        <div className="percent">
+                          <span className="icon icon-r73">{movie.vote_average}</span>
+                        </div>
+                        <canvas height="34" width="34"></canvas>
+                      </div>
+                    </div>
+                  </Item>
                   <p className="bold paragraph">{movie.title}</p>
                   <p className="paragraph">{formatDate(movie.release_date)}</p>
                 </Item>
@@ -74,5 +104,4 @@ const Card = ({ movies }) => {
     </Grid>
   );
 };
-
 export default Card;

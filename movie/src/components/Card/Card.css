@@ -54,11 +54,11 @@ img {
 }
 
 .voteAverage {
-  width: 30px;
-  height: 30px;
-  background-color: black;
+  /* width: 30px;
+  height: 30px; */
+  /* background-color: black; */
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   border-radius: 50%;
   margin-top: 10px;
@@ -68,6 +68,23 @@ img {
   color: white;
   clip-path: circle(50px);
 }
+
+.outer_ring {
+  width: 30px;
+  height: 25px;
+  padding: 2px;
+  background-color: rgb(36, 30, 30);
+}
+
+div.consensus div.outer_ring {
+  display: inline-block;
+  /* width: 60px;
+  height: 60px; */
+  border-radius: 50%;
+  padding: 4px;
+  background-color: #1a5668;
+}
+
 
 .blur {
   background-color: rgba(0, 5, 6, 0.742);
