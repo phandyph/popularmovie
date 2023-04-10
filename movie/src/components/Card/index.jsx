@@ -3,7 +3,9 @@ import Grid from "@mui/material/Grid";
 import { Item } from "semantic-ui-react";
 import DetailIcon from "../DetailIcon";
 import months from "../../data/Month.json";
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import Stack from "@mui/material/Stack";
+import CircularProgress from "@mui/material/CircularProgress";
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8N3x8fGVufDB8fHx8&w=1000&q=80";
 
@@ -41,10 +43,10 @@ const Card = ({ movies }) => {
     return formatted.toString();
   };
 
-  // // Set vote_average be %
-  // const percentage = (voteAverage) => {
-  //   return voteAverage * 10;
-  // };
+ 
+  // const percentage = useCallback((voteAverage)=> {
+  //   return voteAverage * 10
+  // }, [voteAverage]) 
 
   return (
     <Grid container spacing={4}>
@@ -66,32 +68,9 @@ const Card = ({ movies }) => {
                   <img src={IMAGE_URL} alt="" />
                 </Item>
                 <Item className="description">
-                  <Item className="voteAverage">
-                    {/* <svg viewBox="0 0 64 64" className="pie">
-                      <circle r="40%" cx="50%" cy="50%" stroke="green" />
-                      <text
-                        fill="#FFFFFF"
-                        font-width="bold"
-                        font-size="20"
-                        x="20"
-                        y="40"
-                      >
-                        {percentage(movie.vote_average)}
-                      </text>
-                    </svg> */}
-
-                    <div className="outer_ring">
-                      <div
-                        className="user_score_chart 5e55ba97a93d2500134fa1ee"
-                        data-percent="73.0"
-                      >
-                        <div className="percent">
-                          <span className="icon icon-r73">{movie.vote_average}</span>
-                        </div>
-                        <canvas height="34" width="34"></canvas>
-                      </div>
-                    </div>
-                  </Item>
+                  <Stack className="voteAverage">
+                    <CircularProgress variant="determinate" value={25} />
+                  </Stack>
                   <p className="bold paragraph">{movie.title}</p>
                   <p className="paragraph">{formatDate(movie.release_date)}</p>
                 </Item>
