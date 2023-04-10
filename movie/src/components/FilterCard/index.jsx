@@ -1,6 +1,4 @@
-import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import "./FilterCard.css";
 import GenresDisplay from "../Features/GenresDisplay";
 import genres from "../../data/Genres.json";
@@ -15,7 +13,7 @@ const FilterCard = ({ isChecked, onClick }) => {
   };
 
   return (
-    <Card className="filterCard">
+    <div className="eachActionCard">
       <CardActions
         disableSpacing
         expand={expanded}
@@ -25,7 +23,6 @@ const FilterCard = ({ isChecked, onClick }) => {
       >
         <span className="filterWord">Filters</span>
         <ExpandMore expand={expanded} aria-label="show more">
-          <ArrowForwardIosIcon />
         </ExpandMore>
       </CardActions>
       <GenresDisplay
@@ -34,7 +31,7 @@ const FilterCard = ({ isChecked, onClick }) => {
         isChecked={isChecked}
         onClick={onClick}
       />
-    </Card>
+    </div>
   );
 };
 

@@ -5,16 +5,7 @@ import { Menu } from "@mui/material";
 import "./DetailIcon.css";
 import DetailPopup from "../Features/DetailPopup";
 
-const DetailIcon = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
+const DetailIcon = ({ id, handleClose, open, handleClick, anchorEl }) => {
   return (
     <div>
       <IconButton
@@ -23,10 +14,11 @@ const DetailIcon = () => {
         aria-controls={open ? "long-menu" : undefined}
         aria-expanded={open ? "true" : undefined}
         aria-haspopup="true"
-        onClick={handleClick}
+        onClick={(e)=>handleClick(e,id)}
       >
         <MoreHorizIcon />
       </IconButton>
+
 
       <Menu
         id="long-menu"

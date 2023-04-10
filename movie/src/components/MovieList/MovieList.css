@@ -8,7 +8,7 @@
 }
 
 .topIntro {
-  width: 80%;
+  width: 70%;
   margin: auto;
   font-weight: bold;
   margin-top: 20px;
@@ -27,19 +27,36 @@
   display: none;
 }
 
+@media screen and (min-width: 1080px) {
+  .actionContainer {
+    width: 25%;
+    margin-right: 30px;
+  }
+
+  .navbar {
+    width: 70%;
+  }
+
+  .actionAndCardContainer {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 1537px) {
   img {
     object-fit: fill;
   }
-}
 
-@media screen and (min-width: 1080px) {
+  .actionAndCardContainer {
+    flex-direction: column;
+  }
+
   .actionContainer {
-    width: 30%;
-    margin-right: 10px;
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 100%;
   }
 }
-
 
 @media screen and (max-width: 1170px) {
   img {
@@ -58,24 +75,30 @@
   }
 
   .bold {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .paragraph {
-    font-size: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .topIntro {
+    width: 90%;
   }
 
   .actionAndCardContainer {
-    flex-direction: column;
-  }
-
-  .actionContainer {
-    margin-left: 0;
-    margin-bottom: 15px;
-    width: 100%;
+    width: 90%;
   }
 
   .cardContainer {
     margin-left: 0;
+  }
+
+  .navbar {
+    width: 90%;
+  }
+
+  .myCard {
+    min-width: 200px;
   }
 }

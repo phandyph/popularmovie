@@ -28,6 +28,7 @@ export const sort = ({sortOption, list}) => {
       list = list.sort((a, b) =>
         new Date(a.release_date) > new Date(b.release_date) ? 1 : -1
       );
+      
       break;
 
     case "Title (A-Z)":

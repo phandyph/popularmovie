@@ -10,8 +10,9 @@ const CardContainer = ({ onClick, itemForCardContainer }) => {
         loadMoreFunctionAndData={{
           amountItemsDisplay: itemForCardContainer.amountItemsDisplay,
           fourMoviesLength: itemForCardContainer.fourItems,
-          onClick: onClick,
         }}
+
+        onClick ={ onClick}
       />
     </div>
   );
