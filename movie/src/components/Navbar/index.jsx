@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <Router>
       <div className="navbar">
-        <img className="logo" src={LOGO} alt="" />
+        <img className="logo" src={LOGO} alt="NavbarLogo" />
 
         <ul className="leftNav">
           <div class="dropdown">

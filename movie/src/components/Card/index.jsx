@@ -41,7 +41,7 @@ const Card = ({ movies }) => {
   };
 
   // use on style.
-  const setCircleColor = (voteAverage) => {
+  const getCircleColor = (voteAverage) => {
     if (voteAverage > 80) {
       return "success";
     } else if (80 > voteAverage > 70) {
@@ -51,12 +51,13 @@ const Card = ({ movies }) => {
     }
   };
 
-  const styleCardClicked = (idCard, idClick) =>
+  const getBlurOnCardClicked = (idCard, idClick) =>
     idCard === idClick ? "blur" : "none";
 
   return (
     <Grid container spacing={4}>
       {movies.map((movie) => {
+        const voteAverage = voteAverageAsPercent(movie.vote_average)
         return (
           <Grid key={movie.id} item xs={6} md={6} lg={3}>
             <div className="myCard">
@@ -71,19 +72,19 @@ const Card = ({ movies }) => {
                   />
                 </Item>
                 <Item>
-                  <img src={IMAGE_URL} alt="" />
+                  <img src={IMAGE_URL} alt="ImageOfCard" />
                 </Item>
                 <div className="description">
                   <div className="voteAverage">
                     <CircularProgress
-                      color={setCircleColor(
-                        voteAverageAsPercent(movie.vote_average)
+                      color={getCircleColor(
+                        voteAverage
                       )}
                       variant="determinate"
-                      value={voteAverageAsPercent(movie.vote_average)}
+                      value={voteAverage}
                     />
                     <span className="voteAverageNum">
-                      {voteAverageAsPercent(movie.vote_average)}%
+                      {voteAverage}%
                     </span>
                   </div>
 
@@ -93,7 +94,7 @@ const Card = ({ movies }) => {
                   </p>
                 </div>
               </div>
-              <div className={styleCardClicked(cardId, movie.id)}></div>
+              <div className={getBlurOnCardClicked(cardId, movie.id)}></div>
             </div>
           </Grid>
         );
