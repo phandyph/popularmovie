@@ -41,10 +41,17 @@ const Card = ({ movies }) => {
   };
 
   // use on style.
-  const isCircleColor = (voteAverage) =>
-    voteAverage > 80 ? "success" : "warning";
+  const setCircleColor = (voteAverage) => {
+    if (voteAverage > 80) {
+      return "success";
+    } else if (80 > voteAverage > 70) {
+      return "warning";
+    } else {
+      return "error";
+    }
+  };
 
-  const isCardClicked = (idCard, idClick) =>
+  const styleCardClicked = (idCard, idClick) =>
     idCard === idClick ? "blur" : "none";
 
   return (
@@ -69,7 +76,7 @@ const Card = ({ movies }) => {
                 <div className="description">
                   <div className="voteAverage">
                     <CircularProgress
-                      color={isCircleColor(
+                      color={setCircleColor(
                         voteAverageAsPercent(movie.vote_average)
                       )}
                       variant="determinate"
@@ -86,7 +93,7 @@ const Card = ({ movies }) => {
                   </p>
                 </div>
               </div>
-              <div className={isCardClicked(cardId, movie.id)}></div>
+              <div className={styleCardClicked(cardId, movie.id)}></div>
             </div>
           </Grid>
         );
