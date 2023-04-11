@@ -1,3 +1,4 @@
+import { BrowserRouter as Router } from "react-router-dom";
 import "./Footer.css";
 import Basic from "../../data/Basic.json";
 import GetInvolved from "../../data/GetInvolved.json";
@@ -10,44 +11,46 @@ const FOOTER_LOGO =
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="imgAndBtn">
-        <div>
-          <img className="footerLogo" src={FOOTER_LOGO} alt="" />
+    <Router>
+      <div className="footer">
+        <div className="imgAndBtn">
+          <div>
+            <img className="footerLogo" src={FOOTER_LOGO} alt="" />
+          </div>
+          <button className="btnFooter">JOIN THE COMMUNITY</button>
         </div>
-        <button className="btnFooter">JOIN THE COMMUNITY</button>
+
+        <div className="footerNav">
+          <div className="eachFooterNav">
+            <h3 className="footerTitle">THE BASICS</h3>
+            <ul>
+              <NavbarPopup navbarList={Basic} />
+            </ul>
+          </div>
+
+          <div className="eachFooterNav">
+            <h3 className="footerTitle">GET INVOLVED</h3>
+            <ul>
+              <NavbarPopup navbarList={GetInvolved} />
+            </ul>
+          </div>
+
+          <div className="eachFooterNav">
+            <h3 className="footerTitle">COMMUNITY</h3>
+            <ul>
+              <NavbarPopup navbarList={Community} />
+            </ul>
+          </div>
+
+          <div className="eachFooterNav">
+            <h3 className="footerTitle">LEGAL</h3>
+            <ul>
+              <NavbarPopup navbarList={Legal} />
+            </ul>
+          </div>
+        </div>
       </div>
-
-      <div className="footerNav">
-        <div className="eachFooterNav">
-          <h3 className="footerTitle">THE BASICS</h3>
-          <ul>
-            <NavbarPopup navbarList={Basic} />
-          </ul>
-        </div>
-
-        <div className="eachFooterNav">
-          <h3 className="footerTitle">GET INVOLVED</h3>
-          <ul>
-            <NavbarPopup navbarList={GetInvolved} />
-          </ul>
-        </div>
-
-        <div className="eachFooterNav">
-          <h3 className="footerTitle">COMMUNITY</h3>
-          <ul>
-            <NavbarPopup navbarList={Community} />
-          </ul>
-        </div>
-
-        <div className="eachFooterNav">
-          <h3 className="footerTitle">LEGAL</h3>
-          <ul>
-            <NavbarPopup navbarList={Legal} />
-          </ul>
-        </div>
-      </div>
-    </div>
+    </Router>
   );
 };
 export default Footer;

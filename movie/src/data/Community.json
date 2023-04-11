@@ -1,6 +1,6 @@
 [
-    { "id": 1, "label": "Guidelines" },
-    { "id": 2, "label": "Discussions" },
-    { "id": 3, "label": "Leaderboard" },
-    { "id": 4, "label": "Twitter" }
+    { "id": 1, "label": "Guidelines", "link": "/guidelines" },
+    { "id": 2, "label": "Discussions", "link": "/discussions" },
+    { "id": 3, "label": "Leaderboard", "link": "/leaderboardcommunity" },
+    { "id": 4, "label": "Twitter", "link": "/twitter" }
 ]

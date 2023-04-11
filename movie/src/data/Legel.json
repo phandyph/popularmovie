@@ -1,5 +1,5 @@
 [
-    { "id": 1, "label": "Terms of Use" },
-    { "id": 2, "label": "API Terms of Use" },
-    { "id": 3, "label": "Privacy Policy" }
+    { "id": 1, "label": "Terms of Use", "link": "/termsofuse"},
+    { "id": 2, "label": "API Terms of Use", "link": "/apitermsofuse" },
+    { "id": 3, "label": "Privacy Policy", "link": "/privacypolicy" }
 ]

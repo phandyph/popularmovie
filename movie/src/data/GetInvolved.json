@@ -1,5 +1,5 @@
 [
-    { "id": 1, "label": "Contribution Bible" },
-    { "id": 2, "label": "Add New Movie" },
-    { "id": 3, "label": "Add New TV Show" }
+    { "id": 1, "label": "Contribution Bible", "link": "/contributionbible" },
+    { "id": 2, "label": "Add New Movie", "link": "/addnewmovie" },
+    { "id": 3, "label": "Add New TV Show", "link": "/addnewtvshow" }
 ]
