@@ -4,6 +4,7 @@ import { Item } from "semantic-ui-react";
 import DetailIcon from "../DetailIcon";
 import months from "../../data/Month.json";
 import { useState, useCallback } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
 const IMAGE_URL =
   "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwcm9maWxlLXBhZ2V8N3x8fGVufDB8fHx8&w=1000&q=80";
 
@@ -13,12 +14,18 @@ const Card = ({ movies }) => {
   const movieList = [...movies];
   const [cardId, setCardId] = useState(0);
 
+  // use on format
   const dateFormatted = useCallback((_date) => {
     const date = new Date(_date);
     const monthName = months[date.getMonth()];
     return `${monthName} ${date.getDate()}, ${date.getFullYear()}`;
   }, []);
 
+  const voteAverageAsPercent = useCallback((voteAverage) => {
+    return voteAverage * 10;
+  }, []);
+
+  // use on button
   const handleClick = (event, id) => {
     setAnchorEl(event.currentTarget);
     movieList.forEach((mo) => {
@@ -32,6 +39,10 @@ const Card = ({ movies }) => {
     setAnchorEl(false);
     setCardId(0);
   };
+
+  // use on style.
+  const isCircleColor = (voteAverage) =>
+    voteAverage > 80 ? "success" : "warning";
 
   const isCardClicked = (idCard, idClick) =>
     idCard === idClick ? "blur" : "none";
@@ -55,13 +66,25 @@ const Card = ({ movies }) => {
                 <Item>
                   <img src={IMAGE_URL} alt="" />
                 </Item>
-                <Item className="description">
-                  <Item className="voteAverage">{movie.vote_average}</Item>
+                <div className="description">
+                  <div className="voteAverage">
+                    <CircularProgress
+                      color={isCircleColor(
+                        voteAverageAsPercent(movie.vote_average)
+                      )}
+                      variant="determinate"
+                      value={voteAverageAsPercent(movie.vote_average)}
+                    />
+                    <span className="voteAverageNum">
+                      {voteAverageAsPercent(movie.vote_average)}%
+                    </span>
+                  </div>
+
                   <p className="bold paragraph">{movie.title}</p>
                   <p className="paragraph">
                     {dateFormatted(movie.release_date)}
                   </p>
-                </Item>
+                </div>
               </div>
               <div className={isCardClicked(cardId, movie.id)}></div>
             </div>
