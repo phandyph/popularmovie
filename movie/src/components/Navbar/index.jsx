@@ -3,6 +3,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import mobileList from "../../data/Mobile.json";
 import tvShow from "../../data/TvShow.json";
 import more from "../../data/More.json";
+import popularPeople from "../../data/PopularPeople.json";
 import NavbarPopup from "../Features/NavbarPopup";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import HumbergerNavbar from "../HumbergerNavbar";
@@ -17,6 +18,17 @@ const Navbar = () => {
   const isHumbergerIcon = useIsOnMobile();
   const onMobile = useIsOnMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const rightMenu = [
+    { title: "EN" },
+    { title: "JoinTMDB" },
+    { title: <SearchIcon /> },
+  ];
+  const navbarData = [
+    { title: "Movie", navs: mobileList },
+    { title: "TVShows", navs: tvShow },
+    { title: "People", navs: popularPeople },
+    { title: "More", navs: more },
+  ];
 
   // useEffect when onMobile change value from true to false or false to true.
   useEffect(() => {
@@ -28,44 +40,24 @@ const Navbar = () => {
   return (
     <Router>
       <div className="navbar">
-        <img className="logo" src={LOGO} alt="" />
+        <img className="logo" src={LOGO} alt="NavbarLogo" />
 
         <ul className="leftNav">
-          <div class="dropdown">
-            <button class="dropbtn">Movie</button>
-            <div class="dropdownContent">
-              <NavbarPopup navbarList={mobileList} />
-            </div>
-          </div>
-
-          <div class="dropdown">
-            <button class="dropbtn">TVShows</button>
-            <div class="dropdownContent">
-              <NavbarPopup navbarList={tvShow} />
-            </div>
-          </div>
-
-          <div class="dropdown">
-            <button class="dropbtn">People</button>
-            <div class="dropdownContent">
-              <li>PopularPeople</li>
-            </div>
-          </div>
-
-          <div class="dropdown">
-            <button class="dropbtn">More</button>
-            <div class="dropdownContent">
-              <NavbarPopup navbarList={more} />
-            </div>
-          </div>
+          {navbarData.map((nav, i) => {
+            return (
+              <div key={i} class="dropdown">
+                <button class="dropbtn">{nav.title}</button>
+                <div class="dropdownContent">
+                  <NavbarPopup navbarList={nav.navs} />
+                </div>
+              </div>
+            );
+          })}
         </ul>
-
         <ul className="rightNav">
-          <li className="liNav">EN</li>
-          <li className="liNav">JoinTMDB</li>
-          <li className="liNav">
-            <SearchIcon />
-          </li>
+          {rightMenu.map((menu, i) => {
+            return <li className="liNav">{menu.title}</li>;
+          })}
           <li
             onClick={() => {
               setIsMenuOpen(!isMenuOpen);

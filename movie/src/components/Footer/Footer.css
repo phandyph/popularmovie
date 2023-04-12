@@ -1,0 +1,42 @@
+.footer {
+  width: 100%;
+  position: relative;
+  top: 145px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  background-color: rgb(3, 25, 96);
+}
+
+.footerNav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
+
+.footerLogo {
+  width: 130px;
+  height: 94px;
+}
+
+.footerTitle {
+  color: #fff;
+}
+
+.imgAndBtn {
+  display: block;
+}
+
+.btnFooter {
+  background-color: white;
+  color: rgb(13, 154, 154);
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+.eachFooterNav {
+  margin: 20px;
+}
