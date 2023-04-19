@@ -1,6 +1,6 @@
 [
-    { "id": 1, "label": "Discussion" },
-    { "id": 2, "label": "Leaderboard" },
-    { "id": 3, "label": "Support" },
-    { "id": 4, "label": "API" }
+    { "id": 1, "label": "Discussion", "link": "/discussion" },
+    { "id": 2, "label": "Leaderboard", "link": "/leaderboard" },
+    { "id": 3, "label": "Support", "link": "/support" },
+    { "id": 4, "label": "API", "link": "/api" }
 ]

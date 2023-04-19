@@ -1,8 +1,8 @@
 .loadMoreBtn {
-  margin-top: 15px;
+  margin-top: 30px;
   box-sizing: border-box;
   cursor: pointer;
-  background-color: aqua;
+  background-color: rgb(14, 245, 245);
   width: 100%;
   padding: 10px;
   border-radius: 10px;

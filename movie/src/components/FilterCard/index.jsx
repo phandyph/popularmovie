@@ -22,8 +22,7 @@ const FilterCard = ({ isChecked, onClick }) => {
         aria-label="show more"
       >
         <span className="filterWord">Filters</span>
-        <ExpandMore expand={expanded} aria-label="show more">
-        </ExpandMore>
+        <ExpandMore expand={expanded} aria-label="show more" />
       </CardActions>
       <GenresDisplay
         genres={genres}

@@ -8,11 +8,10 @@ const CardContainer = ({ onClick, itemForCardContainer }) => {
       <Card movies={itemForCardContainer.items} />
       <ButtonLoadMore
         loadMoreFunctionAndData={{
-          amountItemsDisplay: itemForCardContainer.amountItemsDisplay,
+          totalItem: itemForCardContainer.totalItem,
           fourMoviesLength: itemForCardContainer.fourItems,
         }}
-
-        onClick ={ onClick}
+        onClick={onClick}
       />
     </div>
   );

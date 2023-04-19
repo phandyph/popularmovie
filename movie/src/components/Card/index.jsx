@@ -41,15 +41,23 @@ const Card = ({ movies }) => {
   };
 
   // use on style.
-  const isCircleColor = (voteAverage) =>
-    voteAverage > 80 ? "success" : "warning";
+  const getCircleColor = (voteAverage) => {
+    if (voteAverage > 80) {
+      return "success";
+    } else if (voteAverage > 70 && voteAverage < 80) {
+      return "warning";
+    } else if (voteAverage < 70) {
+      return "error";
+    }
+  };
 
-  const isCardClicked = (idCard, idClick) =>
+  const handleBlurCardOnClick = (idCard, idClick) =>
     idCard === idClick ? "blur" : "none";
 
   return (
-    <Grid container spacing={4}>
+    <Grid container spacing={2}>
       {movies.map((movie) => {
+        const voteAverage = voteAverageAsPercent(movie.vote_average);
         return (
           <Grid key={movie.id} item xs={6} md={6} lg={3}>
             <div className="myCard">
@@ -64,20 +72,20 @@ const Card = ({ movies }) => {
                   />
                 </Item>
                 <Item>
-                  <img src={IMAGE_URL} alt="" />
+                  <img
+                    className="cardImage"
+                    src={IMAGE_URL}
+                    alt="PosterImage of card"
+                  />
                 </Item>
                 <div className="description">
                   <div className="voteAverage">
                     <CircularProgress
-                      color={isCircleColor(
-                        voteAverageAsPercent(movie.vote_average)
-                      )}
+                      color={getCircleColor(voteAverage)}
                       variant="determinate"
-                      value={voteAverageAsPercent(movie.vote_average)}
+                      value={voteAverage}
                     />
-                    <span className="voteAverageNum">
-                      {voteAverageAsPercent(movie.vote_average)}%
-                    </span>
+                    <span className="voteAverageNum">{voteAverage}%</span>
                   </div>
 
                   <p className="bold paragraph">{movie.title}</p>
@@ -86,7 +94,7 @@ const Card = ({ movies }) => {
                   </p>
                 </div>
               </div>
-              <div className={isCardClicked(cardId, movie.id)}></div>
+              <div className={handleBlurCardOnClick(cardId, movie.id)}></div>
             </div>
           </Grid>
         );

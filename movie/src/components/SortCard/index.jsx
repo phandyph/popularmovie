@@ -32,8 +32,7 @@ const SortCard = ({ onClick }) => {
           onClick={handleExpandClick}
           aria-expanded={isExpanded}
           aria-label="show more"
-        >
-        </ExpandMore>
+        />
       </CardActions>
       <Collapse in={isExpanded} timeout="auto" unmountOnExit>
         <hr />

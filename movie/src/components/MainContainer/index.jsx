@@ -10,12 +10,12 @@ const ITEMS_PER_PAGE = 4;
 const MainContainer = () => {
   const [movieList, setMovieList] = useState(movies);
   const [fourMoviesLength, setFourMoviesLength] = useState(ITEMS_PER_PAGE);
-  const amountMoviesDisplay = movieList.slice(
+  const totalItem = movieList.slice(
     START_INDEX,
     fourMoviesLength
   ).length;
 
-  const onGetMoviesAfterDoAction = (moviesFromSorting) => {
+  const updateMovieList = (moviesFromSorting) => {
     setMovieList(moviesFromSorting);
   };
 
@@ -24,16 +24,21 @@ const MainContainer = () => {
   };
 
   return (
-    <div className="actionAndCardContainer">
-      <ActionContainer movies={movies} onSearch={onGetMoviesAfterDoAction} />
-      <CardContainer
-        itemForCardContainer={{
-          items: movieList.slice(START_INDEX, fourMoviesLength),
-          fourItems: fourMoviesLength,
-          amountItemsDisplay: amountMoviesDisplay,
-        }}
-        onClick={onLoadMore}
-      />
+    <div>
+      <div className="topIntro">
+        <h3 className="pageTitle">Popular Movie</h3>
+      </div>
+      <div className="actionAndCardContainer">
+        <ActionContainer movies={movies} onSearch={updateMovieList} />
+        <CardContainer
+          itemForCardContainer={{
+            items: movieList.slice(START_INDEX, fourMoviesLength),
+            ItemsPerPage: fourMoviesLength,
+            totalItem: totalItem,
+          }}
+          onClick={onLoadMore}
+        />
+      </div>
     </div>
   );
 };

@@ -1,21 +1,19 @@
 .navbar {
   height: 64px;
-  max-width: 1400px;
-  min-width: 420px;
   margin: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.leftNav {
+.mainNavMenu {
   display: flex;
   justify-content: flex-start;
   flex-wrap: nowrap;
   align-items: center;
 }
 
-.rightNav {
+.userPreferencesNavMenu {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -25,7 +23,8 @@
 li {
   text-decoration: none;
   list-style: none;
-  color: white;
+  line-height: 1.8rem;
+  color: #fff;
   cursor: pointer;
 }
 .liEachNav {
@@ -69,7 +68,6 @@ li {
   outline: none;
   color: white;
   padding: 14px 16px;
-  background-color: inherit;
   font-family: inherit;
   margin: 0;
 }
@@ -78,7 +76,7 @@ li {
 .dropdownContent {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: rgb(116, 120, 120);
   min-width: 105px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -95,7 +93,7 @@ li {
 }
 
 .dropdownContent li:hover {
-  background-color: #ddd;
+  background-color: rgb(188, 194, 194);
   border-radius: 5px;
 }
 
@@ -103,17 +101,23 @@ li {
   display: block;
 }
 
-.searchShow {
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  position: absolute;
-  z-index: 5;
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-}
-
 .none {
   display: none;
+}
+
+.navlink {
+  text-decoration: none;
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.active {
+  color: aqua;
+  border-radius: 5px;
 }

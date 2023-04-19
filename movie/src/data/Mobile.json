@@ -1,6 +1,6 @@
 [
-    { "id": 1, "label": "Popular" },
-    { "id": 2, "label": "Now Playing" },
-    { "id": 3, "label": "Upcoming" },
-    { "id": 4, "label": "Top Rated" }
+    { "id": 1, "label": "Popular", "link": "/" },
+    { "id": 2, "label": "Now Playing", "link": "/nowplaying" },
+    { "id": 3, "label": "Upcoming", "link": "/upcoming" },
+    { "id": 4, "label": "Top Rated", "link": "/toprated" }
 ]

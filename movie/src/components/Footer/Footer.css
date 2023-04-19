@@ -1,0 +1,21 @@
+.footerContainer {
+  width: 100%;
+  background-color: rgb(3, 25, 96);
+}
+
+.footerNav {
+  display: flex;
+}
+
+.footerLogoContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footerTitle {
+  color: #fff;
+}
+
+.eachFooterNav {
+  margin: 30px;
+}
