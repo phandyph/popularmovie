@@ -46,12 +46,12 @@ const Card = ({ movies }) => {
       return "success";
     } else if (voteAverage > 70 && voteAverage < 80) {
       return "warning";
-    } else if (voteAverage < 30) {
+    } else if (voteAverage < 70) {
       return "error";
     }
   };
 
-  const getBlurOnCardClicked = (idCard, idClick) =>
+  const handleBlurCardOnClick = (idCard, idClick) =>
     idCard === idClick ? "blur" : "none";
 
   return (
@@ -73,9 +73,9 @@ const Card = ({ movies }) => {
                 </Item>
                 <Item>
                   <img
-                    className="imgOnCard"
+                    className="cardImage"
                     src={IMAGE_URL}
-                    alt="ImageOfCard"
+                    alt="PosterImage of card"
                   />
                 </Item>
                 <div className="description">
@@ -94,7 +94,7 @@ const Card = ({ movies }) => {
                   </p>
                 </div>
               </div>
-              <div className={getBlurOnCardClicked(cardId, movie.id)}></div>
+              <div className={handleBlurCardOnClick(cardId, movie.id)}></div>
             </div>
           </Grid>
         );

@@ -4,7 +4,7 @@ const ApiMore = () => {
       <div className="topIntro">
         <h3 className="pageTitle">More</h3>
       </div>
-      <div className="actionAndCardContainer">
+      <div className="pageContainer">
         <p>Here is on api</p>
       </div>
     </div>

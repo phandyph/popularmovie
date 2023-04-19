@@ -1,11 +1,11 @@
 import "./HumbergerNavbar.css";
 import NavbarPopup from "../Features/NavbarPopup";
 
-const HumbergerNavbar = ({ navbarData, rightSideMenu, onMobile }) => {
+const HumbergerNavbar = ({ mainNavMenu, userPreferencesMenu, onMobile }) => {
   return (
     <div className={onMobile ? "showMobileNavbar" : "hideMobileNavbar"}>
       <div className="hamburgerMenu">
-        {navbarData.map((nav, i) => {
+        {mainNavMenu.map((nav, i) => {
           return (
             <div key={i} class="dropdownBuger">
               <button class="dropbtnBuger">{nav.label}</button>
@@ -16,7 +16,7 @@ const HumbergerNavbar = ({ navbarData, rightSideMenu, onMobile }) => {
           );
         })}
 
-        {rightSideMenu.map((menu, i) => {
+        {userPreferencesMenu.map((menu, i) => {
           return (
             <div key={i} class="dropdownBuger">
               <button class="dropbtnBuger">{menu.label}</button>

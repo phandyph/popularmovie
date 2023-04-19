@@ -4,7 +4,7 @@ const ContributionBible = () => {
       <div className="topIntro">
         <h3 className="pageTitle">Get Involved</h3>
       </div>
-      <div className="actionAndCardContainer">
+      <div className="pageContainer">
         <p>Here is Contribution Bible </p>
       </div>
     </div>

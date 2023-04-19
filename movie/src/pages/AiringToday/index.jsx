@@ -4,7 +4,7 @@ const AiringToday = () => {
       <div className="topIntro">
         <h3 className="pageTitle">Popular Tv Shows</h3>
       </div>
-      <div className="actionAndCardContainer">
+      <div className="pageContainer">
         <p>Here is on airing today.</p>
       </div>
     </div>

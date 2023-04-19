@@ -4,7 +4,7 @@ const AboutTmdb = () => {
       <div className="topIntro">
         <h3 className="pageTitle">The Basics</h3>
       </div>
-      <div className="actionAndCardContainer">
+      <div className="pageContainer">
         <p>Here is on about TMDB </p>
       </div>
     </div>

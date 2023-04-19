@@ -4,7 +4,7 @@ const ContactUs = () => {
       <div className="topIntro">
         <h3 className="pageTitle">The Basics</h3>
       </div>
-      <div className="actionAndCardContainer">
+      <div className="pageContainer">
         <p>Here is on about contactus </p>
       </div>
     </div>

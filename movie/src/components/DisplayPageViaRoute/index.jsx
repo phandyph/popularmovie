@@ -5,7 +5,7 @@ const DisplayPageViaRoute = ({ routes }) => {
       <Routes>
         {routes.map((page, i) => {
           return (
-            <Route key={i} path={page.path} element={page.element}></Route>
+            <Route key={i} path={page.path} element={page.element}/>
           );
         })}
       </Routes>
