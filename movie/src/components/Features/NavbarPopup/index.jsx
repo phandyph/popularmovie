@@ -5,7 +5,13 @@ const NavbarPopup = ({ navbarList }) => {
       {navbarList.map((navbar) => {
         return (
           <li key={navbar.id}>
-            <NavLink className="navlink" to={navbar.link}>
+            <NavLink
+              activeclassname="active"
+              reloadDocument
+              className="navlink"
+              exact="true"
+              to={navbar.link}
+            >
               {navbar.label}
             </NavLink>
           </li>

@@ -1,4 +1,13 @@
 const Discussion = () => {
-  return <div>Here is discussion page.</div>;
+  return (
+    <div className="mainContainer">
+      <div className="topIntro">
+        <h3 className="pageTitle">More</h3>
+      </div>
+      <div className="actionAndCardContainer">
+        <p>Here is on discussion.</p>
+      </div>
+    </div>
+  );
 };
 export default Discussion;

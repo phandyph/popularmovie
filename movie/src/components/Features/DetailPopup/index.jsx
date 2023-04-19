@@ -11,7 +11,9 @@ const DetailPopup = ({ handleClose }) => {
       <hr />
       <p className="titleButton">Not a member?</p>
       <button className="btnCard">
-        <span className="paragraph brownText">Sign up and join the community</span>
+        <span className="paragraph brownText">
+          Sign up and join the community
+        </span>
         <KeyboardArrowRightIcon />
       </button>
     </button>

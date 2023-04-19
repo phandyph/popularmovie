@@ -1,4 +1,13 @@
 const AddNewTvShow = () => {
-  return <div>AddNewTvShow</div>;
+  return (
+    <div className="mainContainer">
+      <div className="topIntro">
+        <h3 className="pageTitle">Get Involved</h3>
+      </div>
+      <div className="actionAndCardContainer">
+        <p>Here is add new tv show.</p>
+      </div>
+    </div>
+  );
 };
 export default AddNewTvShow;

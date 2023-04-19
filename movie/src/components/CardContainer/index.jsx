@@ -11,8 +11,7 @@ const CardContainer = ({ onClick, itemForCardContainer }) => {
           amountItemsDisplay: itemForCardContainer.amountItemsDisplay,
           fourMoviesLength: itemForCardContainer.fourItems,
         }}
-
-        onClick ={ onClick}
+        onClick={onClick}
       />
     </div>
   );

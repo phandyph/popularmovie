@@ -1,4 +1,13 @@
 const PrivacyPolicy = () => {
-  return <div>PrivacyPolicy</div>;
+  return (
+    <div className="mainContainer">
+      <div className="topIntro">
+        <h3 className="pageTitle">Legal</h3>
+      </div>
+      <div className="actionAndCardContainer">
+        <p>Here is privacy policy</p>
+      </div>
+    </div>
+  );
 };
 export default PrivacyPolicy;
